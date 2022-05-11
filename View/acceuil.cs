@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Mediatek86
 {
@@ -19,7 +20,7 @@ namespace Mediatek86
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void lbllogo1_Click(object sender, EventArgs e)
