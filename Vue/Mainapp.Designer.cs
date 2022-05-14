@@ -1,5 +1,5 @@
 ﻿
-namespace Mediatek86
+namespace Mediatek86.Vue
 {
     partial class Mainapp
     {
@@ -29,9 +29,9 @@ namespace Mediatek86
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainapp));
             this.PicIcone = new System.Windows.Forms.PictureBox();
-            this.lstpersonnel = new System.Windows.Forms.ListBox();
             this.lblNomPrenom = new System.Windows.Forms.Label();
             this.lblfonction = new System.Windows.Forms.Label();
             this.lbltelephone = new System.Windows.Forms.Label();
@@ -55,9 +55,14 @@ namespace Mediatek86
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.dtgPersonnel = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.bdgPersonnel = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PicIcone)).BeginInit();
             this.grpaffichecontact.SuspendLayout();
             this.grpAjouterPersonnel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPersonnel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgPersonnel)).BeginInit();
             this.SuspendLayout();
             // 
             // PicIcone
@@ -69,20 +74,6 @@ namespace Mediatek86
             this.PicIcone.Size = new System.Drawing.Size(176, 198);
             this.PicIcone.TabIndex = 0;
             this.PicIcone.TabStop = false;
-            // 
-            // lstpersonnel
-            // 
-            this.lstpersonnel.FormattingEnabled = true;
-            this.lstpersonnel.ItemHeight = 20;
-            this.lstpersonnel.Items.AddRange(new object[] {
-            "Jeanne MORAUD"});
-            this.lstpersonnel.Location = new System.Drawing.Point(442, 62);
-            this.lstpersonnel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lstpersonnel.Name = "lstpersonnel";
-            this.lstpersonnel.Size = new System.Drawing.Size(329, 464);
-            this.lstpersonnel.TabIndex = 1;
-            this.lstpersonnel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstpersonnel_MouseClick);
-            this.lstpersonnel.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // lblNomPrenom
             // 
@@ -330,29 +321,55 @@ namespace Mediatek86
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dtgPersonnel
+            // 
+            this.dtgPersonnel.AllowUserToOrderColumns = true;
+            this.dtgPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPersonnel.Location = new System.Drawing.Point(441, 70);
+            this.dtgPersonnel.Name = "dtgPersonnel";
+            this.dtgPersonnel.RowHeadersWidth = 51;
+            this.dtgPersonnel.RowTemplate.Height = 28;
+            this.dtgPersonnel.Size = new System.Drawing.Size(447, 439);
+            this.dtgPersonnel.TabIndex = 28;
+            this.dtgPersonnel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonnel_CellContentClick);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(238, 32);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Mainapp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dtgPersonnel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grpAjouterPersonnel);
             this.Controls.Add(this.grpaffichecontact);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstpersonnel);
             this.Controls.Add(this.PicIcone);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Mainapp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainapp";
+            this.Load += new System.EventHandler(this.Mainapp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicIcone)).EndInit();
             this.grpaffichecontact.ResumeLayout(false);
             this.grpaffichecontact.PerformLayout();
             this.grpAjouterPersonnel.ResumeLayout(false);
             this.grpAjouterPersonnel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPersonnel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgPersonnel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,7 +378,6 @@ namespace Mediatek86
         #endregion
 
         private System.Windows.Forms.PictureBox PicIcone;
-        private System.Windows.Forms.ListBox lstpersonnel;
         private System.Windows.Forms.Label lblNomPrenom;
         private System.Windows.Forms.Label lblfonction;
         private System.Windows.Forms.Label lbltelephone;
@@ -385,5 +401,8 @@ namespace Mediatek86
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.DataGridView dtgPersonnel;
+        private System.Windows.Forms.BindingSource bdgPersonnel;
+        private System.Windows.Forms.Button button4;
     }
 }

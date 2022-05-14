@@ -7,12 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using Mediatek86.Connexion;
 
-namespace Mediatek86
+
+namespace Mediatek86.Vue
 {
-    public partial class absence : Form
-    {
-        public absence()
+    public partial class FrmAbsence : Form
+    { 
+      /*  public void RemplirListeAbsence()
+        {
+            bdgabsence.DataSource = Personnel.ListePersonnels();
+            dtgPersonnel.DataSource = bdgPersonnel;
+            dtgPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        } */
+        public FrmAbsence()
         {
             InitializeComponent();
         }
@@ -82,6 +91,16 @@ namespace Mediatek86
             Mainapp mainapp = new Mainapp();
             mainapp.Show();
             this.Hide();
+        }
+
+        private void PicIcone_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void absence_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

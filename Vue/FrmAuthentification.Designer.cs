@@ -1,7 +1,7 @@
 ﻿
-namespace Mediatek86
+namespace Mediatek86.Vue
 {
-    partial class formBase
+    partial class FrmAuthentification
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -42,9 +42,9 @@ namespace Mediatek86
             // 
             this.lbllogo1.AutoSize = true;
             this.lbllogo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllogo1.Location = new System.Drawing.Point(236, 25);
+            this.lbllogo1.Location = new System.Drawing.Point(266, 31);
             this.lbllogo1.Name = "lbllogo1";
-            this.lbllogo1.Size = new System.Drawing.Size(363, 63);
+            this.lbllogo1.Size = new System.Drawing.Size(354, 61);
             this.lbllogo1.TabIndex = 0;
             this.lbllogo1.Text = "MEDIATEK48";
             this.lbllogo1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -54,7 +54,7 @@ namespace Mediatek86
             // 
             this.lbllogo2.AutoSize = true;
             this.lbllogo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lbllogo2.Location = new System.Drawing.Point(268, 88);
+            this.lbllogo2.Location = new System.Drawing.Point(302, 110);
             this.lbllogo2.Name = "lbllogo2";
             this.lbllogo2.Size = new System.Drawing.Size(286, 31);
             this.lbllogo2.TabIndex = 1;
@@ -63,53 +63,56 @@ namespace Mediatek86
             // lbllogin
             // 
             this.lbllogin.AutoSize = true;
-            this.lbllogin.Location = new System.Drawing.Point(380, 242);
+            this.lbllogin.Location = new System.Drawing.Point(428, 302);
             this.lbllogin.Name = "lbllogin";
-            this.lbllogin.Size = new System.Drawing.Size(43, 17);
+            this.lbllogin.Size = new System.Drawing.Size(50, 20);
             this.lbllogin.TabIndex = 2;
             this.lbllogin.Text = "Login";
             // 
             // labelmdp
             // 
             this.labelmdp.AutoSize = true;
-            this.labelmdp.Location = new System.Drawing.Point(366, 315);
+            this.labelmdp.Location = new System.Drawing.Point(412, 394);
             this.labelmdp.Name = "labelmdp";
-            this.labelmdp.Size = new System.Drawing.Size(94, 17);
+            this.labelmdp.Size = new System.Drawing.Size(112, 20);
             this.labelmdp.TabIndex = 3;
             this.labelmdp.Text = "Mot de Passe";
             this.labelmdp.Click += new System.EventHandler(this.labelmdp_Click);
             // 
             // txtlogin
             // 
-            this.txtlogin.Location = new System.Drawing.Point(304, 278);
+            this.txtlogin.Location = new System.Drawing.Point(342, 348);
+            this.txtlogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtlogin.Name = "txtlogin";
-            this.txtlogin.Size = new System.Drawing.Size(215, 22);
+            this.txtlogin.Size = new System.Drawing.Size(241, 26);
             this.txtlogin.TabIndex = 4;
             this.txtlogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtmotdepasse
             // 
-            this.txtmotdepasse.Location = new System.Drawing.Point(304, 351);
+            this.txtmotdepasse.Location = new System.Drawing.Point(342, 439);
+            this.txtmotdepasse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtmotdepasse.Name = "txtmotdepasse";
-            this.txtmotdepasse.Size = new System.Drawing.Size(215, 22);
+            this.txtmotdepasse.Size = new System.Drawing.Size(241, 26);
             this.txtmotdepasse.TabIndex = 5;
             // 
             // btnConnexion
             // 
-            this.btnConnexion.Location = new System.Drawing.Point(350, 390);
+            this.btnConnexion.Location = new System.Drawing.Point(394, 488);
+            this.btnConnexion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(119, 27);
+            this.btnConnexion.Size = new System.Drawing.Size(134, 34);
             this.btnConnexion.TabIndex = 6;
             this.btnConnexion.Text = "Se Connecter";
             this.btnConnexion.UseVisualStyleBackColor = true;
             this.btnConnexion.Click += new System.EventHandler(this.button1_Click);
             // 
-            // formBase
+            // FrmAuthentification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtmotdepasse);
             this.Controls.Add(this.txtlogin);
@@ -117,7 +120,8 @@ namespace Mediatek86
             this.Controls.Add(this.lbllogin);
             this.Controls.Add(this.lbllogo2);
             this.Controls.Add(this.lbllogo1);
-            this.Name = "formBase";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "FrmAuthentification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mediatek - Gestion du Personnel";
             this.Load += new System.EventHandler(this.Form1_Load);

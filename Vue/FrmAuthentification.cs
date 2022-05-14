@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using Mediatek86.Connexion;
+using Mediatek86.Model;
+using Mediatek86.Dal;
 
-namespace Mediatek86
+
+namespace Mediatek86.Vue 
 {
-    public partial class formBase : Form
+    public partial class FrmAuthentification : Form
     {
-        public formBase()
+        public FrmAuthentification()
         {
             InitializeComponent();
         }
@@ -42,6 +47,43 @@ namespace Mediatek86
             Mainapp mainapp = new Mainapp();
             mainapp.Show();
             this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+          
+               
+            
+            
+            
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblstringcheck_Click(object sender, EventArgs e)
+        {
+
         }
     }
 } 

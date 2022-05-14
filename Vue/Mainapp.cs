@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace Mediatek86
+using Mediatek86.Controler;
+using Mediatek86.Model;
+namespace Mediatek86.Vue
 {
     public partial class Mainapp : Form
     {
-        public Mainapp()
+        public void RemplirListeDeveloppeurs()
         {
-            InitializeComponent();
+            bdgPersonnel.DataSource = Personnel.ListePersonnels();
+            dtgPersonnel.DataSource = bdgPersonnel;
+            dtgPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +97,7 @@ namespace Mediatek86
 
         private void btnGererAbs(object sender, EventArgs e)
         {
-            absence Absence = new absence();
+            FrmAbsence Absence = new FrmAbsence();
             Absence.Show();
             this.Hide();
         }
@@ -106,9 +109,29 @@ namespace Mediatek86
 
         private void button3_Click(object sender, EventArgs e)
         {
-            formBase FormBase = new formBase();
+            FrmAuthentification FormBase = new FrmAuthentification();
             FormBase.Show();
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Mainapp_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            RemplirListeDeveloppeurs();
+        }
+
+        private void dtgPersonnel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
