@@ -1,7 +1,7 @@
 ﻿
 namespace Mediatek86.Vue
 {
-    partial class Mainapp
+    partial class FrmPersonnel
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Mediatek86.Vue
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainapp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonnel));
             this.PicIcone = new System.Windows.Forms.PictureBox();
             this.lblNomPrenom = new System.Windows.Forms.Label();
             this.lblfonction = new System.Windows.Forms.Label();
@@ -50,13 +50,12 @@ namespace Mediatek86.Vue
             this.label8 = new System.Windows.Forms.Label();
             this.txttelephone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnValider = new System.Windows.Forms.Button();
+            this.btnValid = new System.Windows.Forms.Button();
             this.grpAjouterPersonnel = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dtgPersonnel = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.bdgPersonnel = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PicIcone)).BeginInit();
             this.grpaffichecontact.SuspendLayout();
@@ -68,10 +67,9 @@ namespace Mediatek86.Vue
             // PicIcone
             // 
             this.PicIcone.Image = ((System.Drawing.Image)(resources.GetObject("PicIcone.Image")));
-            this.PicIcone.Location = new System.Drawing.Point(38, 32);
-            this.PicIcone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PicIcone.Location = new System.Drawing.Point(34, 26);
             this.PicIcone.Name = "PicIcone";
-            this.PicIcone.Size = new System.Drawing.Size(176, 198);
+            this.PicIcone.Size = new System.Drawing.Size(156, 158);
             this.PicIcone.TabIndex = 0;
             this.PicIcone.TabStop = false;
             // 
@@ -79,7 +77,7 @@ namespace Mediatek86.Vue
             // 
             this.lblNomPrenom.AutoSize = true;
             this.lblNomPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomPrenom.Location = new System.Drawing.Point(30, 0);
+            this.lblNomPrenom.Location = new System.Drawing.Point(27, 0);
             this.lblNomPrenom.Name = "lblNomPrenom";
             this.lblNomPrenom.Size = new System.Drawing.Size(121, 20);
             this.lblNomPrenom.TabIndex = 2;
@@ -89,9 +87,9 @@ namespace Mediatek86.Vue
             // lblfonction
             // 
             this.lblfonction.AutoSize = true;
-            this.lblfonction.Location = new System.Drawing.Point(52, 28);
+            this.lblfonction.Location = new System.Drawing.Point(46, 22);
             this.lblfonction.Name = "lblfonction";
-            this.lblfonction.Size = new System.Drawing.Size(85, 20);
+            this.lblfonction.Size = new System.Drawing.Size(72, 17);
             this.lblfonction.TabIndex = 3;
             this.lblfonction.Text = "(Fonction)";
             this.lblfonction.Click += new System.EventHandler(this.label1_Click_1);
@@ -99,27 +97,26 @@ namespace Mediatek86.Vue
             // lbltelephone
             // 
             this.lbltelephone.AutoSize = true;
-            this.lbltelephone.Location = new System.Drawing.Point(17, 72);
+            this.lbltelephone.Location = new System.Drawing.Point(15, 58);
             this.lbltelephone.Name = "lbltelephone";
-            this.lbltelephone.Size = new System.Drawing.Size(96, 20);
+            this.lbltelephone.Size = new System.Drawing.Size(84, 17);
             this.lbltelephone.TabIndex = 4;
             this.lbltelephone.Text = "Téléphone :";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(17, 138);
+            this.lblEmail.Location = new System.Drawing.Point(15, 110);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(61, 20);
+            this.lblEmail.Size = new System.Drawing.Size(50, 17);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email :";
             // 
             // btnModifFiche
             // 
-            this.btnModifFiche.Location = new System.Drawing.Point(20, 234);
-            this.btnModifFiche.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnModifFiche.Location = new System.Drawing.Point(18, 187);
             this.btnModifFiche.Name = "btnModifFiche";
-            this.btnModifFiche.Size = new System.Drawing.Size(84, 38);
+            this.btnModifFiche.Size = new System.Drawing.Size(75, 30);
             this.btnModifFiche.TabIndex = 6;
             this.btnModifFiche.Text = "Modifier Fiche";
             this.btnModifFiche.UseVisualStyleBackColor = true;
@@ -127,10 +124,9 @@ namespace Mediatek86.Vue
             // 
             // btnSupprimerFiche
             // 
-            this.btnSupprimerFiche.Location = new System.Drawing.Point(134, 235);
-            this.btnSupprimerFiche.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSupprimerFiche.Location = new System.Drawing.Point(119, 188);
             this.btnSupprimerFiche.Name = "btnSupprimerFiche";
-            this.btnSupprimerFiche.Size = new System.Drawing.Size(96, 36);
+            this.btnSupprimerFiche.Size = new System.Drawing.Size(85, 29);
             this.btnSupprimerFiche.TabIndex = 7;
             this.btnSupprimerFiche.Text = "Supprimer";
             this.btnSupprimerFiche.UseVisualStyleBackColor = true;
@@ -140,7 +136,7 @@ namespace Mediatek86.Vue
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(483, 11);
+            this.label1.Location = new System.Drawing.Point(429, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 20);
             this.label1.TabIndex = 8;
@@ -155,11 +151,9 @@ namespace Mediatek86.Vue
             this.grpaffichecontact.Controls.Add(this.lbltelephone);
             this.grpaffichecontact.Controls.Add(this.lblfonction);
             this.grpaffichecontact.Controls.Add(this.lblNomPrenom);
-            this.grpaffichecontact.Location = new System.Drawing.Point(37, 252);
-            this.grpaffichecontact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpaffichecontact.Location = new System.Drawing.Point(33, 202);
             this.grpaffichecontact.Name = "grpaffichecontact";
-            this.grpaffichecontact.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpaffichecontact.Size = new System.Drawing.Size(241, 281);
+            this.grpaffichecontact.Size = new System.Drawing.Size(214, 225);
             this.grpaffichecontact.TabIndex = 10;
             this.grpaffichecontact.TabStop = false;
             this.grpaffichecontact.Visible = false;
@@ -167,63 +161,64 @@ namespace Mediatek86.Vue
             // 
             // txtprenom
             // 
-            this.txtprenom.Location = new System.Drawing.Point(110, 61);
-            this.txtprenom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtprenom.Location = new System.Drawing.Point(98, 49);
             this.txtprenom.Name = "txtprenom";
-            this.txtprenom.Size = new System.Drawing.Size(166, 26);
+            this.txtprenom.Size = new System.Drawing.Size(148, 22);
             this.txtprenom.TabIndex = 11;
             // 
             // txtnom
             // 
-            this.txtnom.Location = new System.Drawing.Point(110, 19);
-            this.txtnom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtnom.Location = new System.Drawing.Point(98, 15);
             this.txtnom.Name = "txtnom";
-            this.txtnom.Size = new System.Drawing.Size(166, 26);
+            this.txtnom.Size = new System.Drawing.Size(148, 22);
             this.txtnom.TabIndex = 12;
             this.txtnom.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 25);
+            this.label2.Location = new System.Drawing.Point(19, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "Nom";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 61);
+            this.label3.Location = new System.Drawing.Point(14, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 14;
             this.label3.Text = "Prénom";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 104);
+            this.label6.Location = new System.Drawing.Point(14, 83);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.Size = new System.Drawing.Size(55, 17);
             this.label6.TabIndex = 17;
             this.label6.Text = "Service";
             // 
             // cbxservice
             // 
             this.cbxservice.FormattingEnabled = true;
-            this.cbxservice.Location = new System.Drawing.Point(110, 104);
-            this.cbxservice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbxservice.Items.AddRange(new object[] {
+            "Pret",
+            "Mediation",
+            "Administratif"});
+            this.cbxservice.Location = new System.Drawing.Point(98, 83);
             this.cbxservice.Name = "cbxservice";
-            this.cbxservice.Size = new System.Drawing.Size(166, 28);
+            this.cbxservice.Size = new System.Drawing.Size(148, 24);
             this.cbxservice.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 154);
+            this.label7.Location = new System.Drawing.Point(14, 123);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.Size = new System.Drawing.Size(76, 17);
             this.label7.TabIndex = 19;
             this.label7.Text = "Télephone";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -231,43 +226,40 @@ namespace Mediatek86.Vue
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 195);
+            this.label8.Location = new System.Drawing.Point(14, 156);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 20);
+            this.label8.Size = new System.Drawing.Size(42, 17);
             this.label8.TabIndex = 20;
             this.label8.Text = "Email";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txttelephone
             // 
-            this.txttelephone.Location = new System.Drawing.Point(110, 148);
-            this.txttelephone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txttelephone.Location = new System.Drawing.Point(98, 118);
             this.txttelephone.Name = "txttelephone";
-            this.txttelephone.Size = new System.Drawing.Size(166, 26);
+            this.txttelephone.Size = new System.Drawing.Size(148, 22);
             this.txttelephone.TabIndex = 21;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(110, 195);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Location = new System.Drawing.Point(98, 156);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(166, 26);
+            this.txtEmail.Size = new System.Drawing.Size(148, 22);
             this.txtEmail.TabIndex = 22;
             // 
-            // btnValider
+            // btnValid
             // 
-            this.btnValider.Location = new System.Drawing.Point(53, 240);
-            this.btnValider.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(158, 34);
-            this.btnValider.TabIndex = 23;
-            this.btnValider.Text = "Valider";
-            this.btnValider.UseVisualStyleBackColor = true;
-            this.btnValider.Click += new System.EventHandler(this.button1_Click);
+            this.btnValid.Location = new System.Drawing.Point(52, 228);
+            this.btnValid.Name = "btnValid";
+            this.btnValid.Size = new System.Drawing.Size(140, 27);
+            this.btnValid.TabIndex = 23;
+            this.btnValid.Text = "Valider";
+            this.btnValid.UseVisualStyleBackColor = true;
+            this.btnValid.Click += new System.EventHandler(this.btnValiderAjoutPersonel_Click);
             // 
             // grpAjouterPersonnel
             // 
-            this.grpAjouterPersonnel.Controls.Add(this.btnValider);
+            this.grpAjouterPersonnel.Controls.Add(this.btnValid);
             this.grpAjouterPersonnel.Controls.Add(this.txtEmail);
             this.grpAjouterPersonnel.Controls.Add(this.txttelephone);
             this.grpAjouterPersonnel.Controls.Add(this.label8);
@@ -278,11 +270,9 @@ namespace Mediatek86.Vue
             this.grpAjouterPersonnel.Controls.Add(this.label2);
             this.grpAjouterPersonnel.Controls.Add(this.txtnom);
             this.grpAjouterPersonnel.Controls.Add(this.txtprenom);
-            this.grpAjouterPersonnel.Location = new System.Drawing.Point(37, 252);
-            this.grpAjouterPersonnel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpAjouterPersonnel.Location = new System.Drawing.Point(12, 189);
             this.grpAjouterPersonnel.Name = "grpAjouterPersonnel";
-            this.grpAjouterPersonnel.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpAjouterPersonnel.Size = new System.Drawing.Size(304, 288);
+            this.grpAjouterPersonnel.Size = new System.Drawing.Size(270, 261);
             this.grpAjouterPersonnel.TabIndex = 24;
             this.grpAjouterPersonnel.TabStop = false;
             this.grpAjouterPersonnel.Visible = false;
@@ -290,10 +280,9 @@ namespace Mediatek86.Vue
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 115);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(218, 92);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 31);
+            this.button1.Size = new System.Drawing.Size(68, 25);
             this.button1.TabIndex = 25;
             this.button1.Text = "Ajouter Personnel";
             this.button1.UseVisualStyleBackColor = true;
@@ -301,10 +290,9 @@ namespace Mediatek86.Vue
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(234, 174);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(208, 139);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 29);
+            this.button2.Size = new System.Drawing.Size(115, 23);
             this.button2.TabIndex = 26;
             this.button2.Text = "Absences";
             this.button2.UseVisualStyleBackColor = true;
@@ -312,10 +300,9 @@ namespace Mediatek86.Vue
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(747, 11);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(664, 9);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 29);
+            this.button3.Size = new System.Drawing.Size(124, 23);
             this.button3.TabIndex = 27;
             this.button3.Text = "Se Deconnecter";
             this.button3.UseVisualStyleBackColor = true;
@@ -323,33 +310,22 @@ namespace Mediatek86.Vue
             // 
             // dtgPersonnel
             // 
-            this.dtgPersonnel.AllowUserToOrderColumns = true;
             this.dtgPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPersonnel.Location = new System.Drawing.Point(441, 70);
+            this.dtgPersonnel.Location = new System.Drawing.Point(344, 38);
             this.dtgPersonnel.Name = "dtgPersonnel";
             this.dtgPersonnel.RowHeadersWidth = 51;
-            this.dtgPersonnel.RowTemplate.Height = 28;
-            this.dtgPersonnel.Size = new System.Drawing.Size(447, 439);
+            this.dtgPersonnel.RowTemplate.Height = 24;
+            this.dtgPersonnel.Size = new System.Drawing.Size(444, 400);
             this.dtgPersonnel.TabIndex = 28;
-            this.dtgPersonnel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonnel_CellContentClick);
+            this.dtgPersonnel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonnel_CellClick);
+            this.dtgPersonnel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button4
+            // FrmPersonnel
             // 
-            this.button4.Location = new System.Drawing.Point(238, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // Mainapp
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(900, 562);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dtgPersonnel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -358,10 +334,9 @@ namespace Mediatek86.Vue
             this.Controls.Add(this.grpaffichecontact);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PicIcone);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Mainapp";
+            this.Name = "FrmPersonnel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mainapp";
+            this.Text = "Gestion Personnel";
             this.Load += new System.EventHandler(this.Mainapp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicIcone)).EndInit();
             this.grpaffichecontact.ResumeLayout(false);
@@ -396,13 +371,12 @@ namespace Mediatek86.Vue
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txttelephone;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.Button btnValid;
         private System.Windows.Forms.GroupBox grpAjouterPersonnel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        public System.Windows.Forms.DataGridView dtgPersonnel;
+        private System.Windows.Forms.DataGridView dtgPersonnel;
         private System.Windows.Forms.BindingSource bdgPersonnel;
-        private System.Windows.Forms.Button button4;
     }
 }

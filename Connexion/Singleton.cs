@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-
+using Mediatek86.Model;
+using System.Globalization;
+    
 
 namespace Mediatek86.Connexion
 {     /// <summary>
@@ -62,27 +64,33 @@ namespace Mediatek86.Connexion
             }
             return instance;
         }
-       
-       /* public static void getdatagrid (string requetedata)
-        {
-           var connectiondtb = GetInstance("server=localhost;user id=root;database=mlr1") ;
-            connectiondtb.connection.Open();
-            MySqlDataAdapter reqdataAdapter = new MySqlDataAdapter(requetedata, connectiondtb);
-            
-        
-        }
-       */
 
-        /// <summary>
-        /// Methodes qui permet l'accès aux requetes
-        /// </summary>
+        /// methode pour absece
+      
 
-       /// <summary>
-        /// Exécution d'une requête autre que "select"
-        /// </summary>
-        /// <param name="stringQuery">requête autre que select</param>
-        /// <param name="parameters">dictionnire contenant les parametres</param>
-        public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters)
+
+
+
+            /* public static void getdatagrid (string requetedata)
+             {
+                var connectiondtb = GetInstance("server=localhost;user id=root;database=mlr1") ;
+                 connectiondtb.connection.Open();
+                 MySqlDataAdapter reqdataAdapter = new MySqlDataAdapter(requetedata, connectiondtb);
+
+
+             }
+            */
+
+            /// <summary>
+            /// Methodes qui permet l'accès aux requetes
+            /// </summary>
+
+            /// <summary>
+            /// Exécution d'une requête autre que "select"
+            /// </summary>
+            /// <param name="stringQuery">requête autre que select</param>
+            /// <param name="parameters">dictionnire contenant les parametres</param>
+            public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters)
         {
             try
             {

@@ -44,9 +44,10 @@ namespace Mediatek86.Vue
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Mainapp mainapp = new Mainapp();
-            mainapp.Show();
+           FrmPersonnel  frmPersonnel = new FrmPersonnel();
+            frmPersonnel.Show();
             this.Hide();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -84,6 +85,13 @@ namespace Mediatek86.Vue
         private void lblstringcheck_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            FrmAbsence frmAbsence = new FrmAbsence();
+            frmAbsence.Show();
+            this.Hide();
         }
     }
 } 

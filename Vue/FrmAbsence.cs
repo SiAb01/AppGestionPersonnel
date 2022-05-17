@@ -9,21 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Mediatek86.Connexion;
-
+using Mediatek86.Model;
 
 namespace Mediatek86.Vue
 {
     public partial class FrmAbsence : Form
-    { 
-      /*  public void RemplirListeAbsence()
+    { //Remplir methode au moment de creer les methodes associé cas utilisation AJOUTERABSENCE()
+       public void AjoutAbsence()
         {
-            bdgabsence.DataSource = Personnel.ListePersonnels();
-            dtgPersonnel.DataSource = bdgPersonnel;
-            dtgPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        } */
+
+        }
+        
+        public void RemplirListeAbsence()
+        {
+            bdgAbsence.DataSource = Absence.ListeAbsence();
+            dtgAbsence.DataSource = bdgAbsence;
+            dtgAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgAbsence.MultiSelect = false;
+            dtgAbsence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgAbsence.ReadOnly = true;
+
+        } 
+     
         public FrmAbsence()
         {
             InitializeComponent();
+            RemplirListeAbsence();
         }
 
         private void lstabsence_MouseClick(object sender, MouseEventArgs e)
@@ -88,8 +99,8 @@ namespace Mediatek86.Vue
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            Mainapp mainapp = new Mainapp();
-            mainapp.Show();
+           FrmPersonnel frmPersonnel = new FrmPersonnel();
+            frmPersonnel.Show();
             this.Hide();
         }
 
@@ -99,6 +110,15 @@ namespace Mediatek86.Vue
         }
 
         private void absence_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgAbsence_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dtgAbsence_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
