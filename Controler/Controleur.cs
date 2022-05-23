@@ -13,15 +13,21 @@ using Mediatek86.Vue;
 
 namespace Mediatek86.Controler
 {
-    class controleuclass
+    class Controleur
+
     {
-        
-           
+
+
+        public static List<Absence> AfficherdtgAbsence(Personnel personnel)
+        {
+            return AccesDonnes.Liste1PersonlelAbsence(personnel);
+        }
 
 
 
 
-        public static void AfficherDtgPersonnel ()
+
+        public static void AfficherDtgPersonnel()
         {
             AccesDonnes.GetLesPersonnels();
             MySqlConnection connectionbdd = new MySqlConnection("server=localhost;user id=root;database=mlr1");

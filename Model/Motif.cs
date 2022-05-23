@@ -23,15 +23,22 @@ namespace Mediatek86.Model
         public string Libelle { get => libelle; set => libelle = value; }
 
         /// <summary>
-        /// Méthode temporaire qui deviendra un constructeur privé qui imposera que ces 4 instances de classe
+        /// Liste des motifs ; assigner la valeur retourné par listeMotif
         /// </summary>
-        /// <returns> les 4 instances de Motif</returns>
+        /// <returns>liste  objet motifs (id, libellle</returns>
+        /// 
+        public static List<Motif> lestmotif = new List<Motif>();
+        
+        public static List<Motif> listeMotif()
+            
+        { List<Motif> lalistemotif = new List<Motif>();
+          lalistemotif.Add(  new Motif(1, "vacances"));
+            lalistemotif.Add(new Motif(2, "maladie"));
+            lalistemotif.Add( new Motif(3, "motif familiale"));
+            lalistemotif.Add( new Motif(4, "congé parental"));
+  
 
-        public static void MotifInstance()
-        {
-            Motif motifVacances = new Motif(1, "vacances");
-            Motif motifMaladie = new Motif(2, "maladie");
-            Motif motifCongeParentale = new Motif(3, "congé parental");
+            return lalistemotif;
         }
        
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mediatek86.Connexion;
 using Mediatek86.Dal;
+using Mediatek86.Vue;
 
 namespace Mediatek86.Model
 {  /// <summary>
@@ -59,10 +60,11 @@ namespace Mediatek86.Model
 
         public override string ToString()
         {
-            string topersonnnel = this.nom.ToUpper() + " " + this.prenom ;
+            string topersonnnel = this.nom.ToUpper() + "  " + this.prenom ;
               return topersonnnel;
         }
 
+     //   public static List<Absence> ListeAbsenceDuPersonnel = FrmAbsence.listeabsdupersonnel;
 
 
 

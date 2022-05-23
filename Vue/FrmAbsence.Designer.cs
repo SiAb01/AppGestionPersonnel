@@ -38,16 +38,18 @@ namespace Mediatek86.Vue
             this.label1 = new System.Windows.Forms.Label();
             this.DatepDatedebut = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DatepDateFin = new System.Windows.Forms.DateTimePicker();
             this.cbxMotifAbsence = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnValiderAbsence = new System.Windows.Forms.Button();
+            this.btnValidAjoutAbs = new System.Windows.Forms.Button();
             this.grpAjoutAbsence = new System.Windows.Forms.GroupBox();
+            this.btnValidModif = new System.Windows.Forms.Button();
             this.btnModifierAbs = new System.Windows.Forms.Button();
             this.btnSupprAbs = new System.Windows.Forms.Button();
             this.btnRetour = new System.Windows.Forms.Button();
             this.dtgAbsence = new System.Windows.Forms.DataGridView();
             this.bdgAbsence = new System.Windows.Forms.BindingSource(this.components);
+            this.lbltitreabsence = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicIcone)).BeginInit();
             this.grpAjoutAbsence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAbsence)).BeginInit();
@@ -62,7 +64,6 @@ namespace Mediatek86.Vue
             this.PicIcone.Size = new System.Drawing.Size(156, 158);
             this.PicIcone.TabIndex = 1;
             this.PicIcone.TabStop = false;
-            this.PicIcone.Click += new System.EventHandler(this.PicIcone_Click);
             // 
             // lblNomPrenom
             // 
@@ -121,17 +122,22 @@ namespace Mediatek86.Vue
             this.label2.Text = "Date  Fin";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // dateTimePicker2
+            // DatepDateFin
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(13, 89);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.DatepDateFin.Location = new System.Drawing.Point(13, 89);
+            this.DatepDateFin.Name = "DatepDateFin";
+            this.DatepDateFin.Size = new System.Drawing.Size(200, 22);
+            this.DatepDateFin.TabIndex = 9;
+            this.DatepDateFin.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // cbxMotifAbsence
             // 
             this.cbxMotifAbsence.FormattingEnabled = true;
+            this.cbxMotifAbsence.Items.AddRange(new object[] {
+            "vacances",
+            "maladie",
+            "motif familiale",
+            "congé parental"});
             this.cbxMotifAbsence.Location = new System.Drawing.Point(13, 151);
             this.cbxMotifAbsence.Name = "cbxMotifAbsence";
             this.cbxMotifAbsence.Size = new System.Drawing.Size(178, 24);
@@ -148,22 +154,23 @@ namespace Mediatek86.Vue
             this.label3.Text = "Motif Absence";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // btnValiderAbsence
+            // btnValidAjoutAbs
             // 
-            this.btnValiderAbsence.Location = new System.Drawing.Point(60, 182);
-            this.btnValiderAbsence.Name = "btnValiderAbsence";
-            this.btnValiderAbsence.Size = new System.Drawing.Size(75, 23);
-            this.btnValiderAbsence.TabIndex = 12;
-            this.btnValiderAbsence.Text = "Valider";
-            this.btnValiderAbsence.UseVisualStyleBackColor = true;
-            this.btnValiderAbsence.Click += new System.EventHandler(this.button2_Click);
+            this.btnValidAjoutAbs.Location = new System.Drawing.Point(60, 182);
+            this.btnValidAjoutAbs.Name = "btnValidAjoutAbs";
+            this.btnValidAjoutAbs.Size = new System.Drawing.Size(75, 23);
+            this.btnValidAjoutAbs.TabIndex = 12;
+            this.btnValidAjoutAbs.Text = "Valider";
+            this.btnValidAjoutAbs.UseVisualStyleBackColor = true;
+            this.btnValidAjoutAbs.Click += new System.EventHandler(this.button2_Click);
             // 
             // grpAjoutAbsence
             // 
-            this.grpAjoutAbsence.Controls.Add(this.btnValiderAbsence);
+            this.grpAjoutAbsence.Controls.Add(this.btnValidModif);
+            this.grpAjoutAbsence.Controls.Add(this.btnValidAjoutAbs);
             this.grpAjoutAbsence.Controls.Add(this.label3);
             this.grpAjoutAbsence.Controls.Add(this.cbxMotifAbsence);
-            this.grpAjoutAbsence.Controls.Add(this.dateTimePicker2);
+            this.grpAjoutAbsence.Controls.Add(this.DatepDateFin);
             this.grpAjoutAbsence.Controls.Add(this.label2);
             this.grpAjoutAbsence.Controls.Add(this.DatepDatedebut);
             this.grpAjoutAbsence.Controls.Add(this.label1);
@@ -174,6 +181,16 @@ namespace Mediatek86.Vue
             this.grpAjoutAbsence.TabStop = false;
             this.grpAjoutAbsence.Visible = false;
             // 
+            // btnValidModif
+            // 
+            this.btnValidModif.Location = new System.Drawing.Point(60, 181);
+            this.btnValidModif.Name = "btnValidModif";
+            this.btnValidModif.Size = new System.Drawing.Size(75, 23);
+            this.btnValidModif.TabIndex = 13;
+            this.btnValidModif.Text = "Valider";
+            this.btnValidModif.UseVisualStyleBackColor = true;
+            this.btnValidModif.Click += new System.EventHandler(this.btnValidModif_Click);
+            // 
             // btnModifierAbs
             // 
             this.btnModifierAbs.Location = new System.Drawing.Point(174, 107);
@@ -182,7 +199,7 @@ namespace Mediatek86.Vue
             this.btnModifierAbs.TabIndex = 14;
             this.btnModifierAbs.Text = "Modifier";
             this.btnModifierAbs.UseVisualStyleBackColor = true;
-            this.btnModifierAbs.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnModifierAbs.Click += new System.EventHandler(this.btnModifierAbs_Click_1);
             // 
             // btnSupprAbs
             // 
@@ -192,7 +209,7 @@ namespace Mediatek86.Vue
             this.btnSupprAbs.TabIndex = 15;
             this.btnSupprAbs.Text = "Supprimer";
             this.btnSupprAbs.UseVisualStyleBackColor = true;
-            this.btnSupprAbs.Click += new System.EventHandler(this.button3_Click);
+            this.btnSupprAbs.Click += new System.EventHandler(this.btnSupprAbs_Click);
             // 
             // btnRetour
             // 
@@ -202,7 +219,7 @@ namespace Mediatek86.Vue
             this.btnRetour.TabIndex = 16;
             this.btnRetour.Text = "<";
             this.btnRetour.UseVisualStyleBackColor = true;
-            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click_1);
             // 
             // dtgAbsence
             // 
@@ -214,8 +231,23 @@ namespace Mediatek86.Vue
             this.dtgAbsence.RowTemplate.Height = 28;
             this.dtgAbsence.Size = new System.Drawing.Size(440, 370);
             this.dtgAbsence.TabIndex = 17;
-            this.dtgAbsence.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAbsence_CellClick);
-            this.dtgAbsence.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAbsence_CellContentClick);
+            this.dtgAbsence.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAbsence_CellContentClick_1);
+            this.dtgAbsence.SelectionChanged += new System.EventHandler(this.dtgAbsence_SelectionChanged);
+            // 
+            // bdgAbsence
+            // 
+            this.bdgAbsence.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.bdgAbsence_BindingComplete);
+            // 
+            // lbltitreabsence
+            // 
+            this.lbltitreabsence.AutoSize = true;
+            this.lbltitreabsence.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitreabsence.Location = new System.Drawing.Point(336, 20);
+            this.lbltitreabsence.Name = "lbltitreabsence";
+            this.lbltitreabsence.Size = new System.Drawing.Size(80, 24);
+            this.lbltitreabsence.TabIndex = 18;
+            this.lbltitreabsence.Text = "Absence";
+            this.lbltitreabsence.Click += new System.EventHandler(this.label5_Click);
             // 
             // FrmAbsence
             // 
@@ -223,6 +255,7 @@ namespace Mediatek86.Vue
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbltitreabsence);
             this.Controls.Add(this.dtgAbsence);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.btnSupprAbs);
@@ -255,15 +288,17 @@ namespace Mediatek86.Vue
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DatepDatedebut;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DatepDateFin;
         private System.Windows.Forms.ComboBox cbxMotifAbsence;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnValiderAbsence;
+        private System.Windows.Forms.Button btnValidAjoutAbs;
         private System.Windows.Forms.GroupBox grpAjoutAbsence;
         private System.Windows.Forms.Button btnModifierAbs;
         private System.Windows.Forms.Button btnSupprAbs;
         private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.DataGridView dtgAbsence;
         private System.Windows.Forms.BindingSource bdgAbsence;
+        private System.Windows.Forms.Button btnValidModif;
+        private System.Windows.Forms.Label lbltitreabsence;
     }
 }
