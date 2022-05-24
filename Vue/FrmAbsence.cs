@@ -113,7 +113,15 @@ namespace Mediatek86.Vue
             RemplirListeAbsence();
             // Afficher un petit recap du profil du personnel dont on va gérer l'absence
             lblNomPrenom.Text = FrmPersonnel.personnelAbs.ToString();
-            lblfonction.Text = " ( " + FrmPersonnel.personnelAbs.Nomservice.ToString() + " ) ";
+            lblfonction.Text = " ( " + FrmPersonnel.personnelAbs.ServicePersonnel.Nom.ToString() + " ) ";
+            //Remplir les combobox
+            
+            
+            cbxMotifAbsence.Items.Add((string)Motif.Motif1Vacances.Libelle);
+            cbxMotifAbsence.Items.Add((string)Motif.Moti2fMaladie.Libelle);
+            cbxMotifAbsence.Items.Add((string)Motif.Motif3Familiale.Libelle);
+            cbxMotifAbsence.Items.Add((string)Motif.Motif4CongeParental.Libelle);
+
 
         }
 
@@ -158,8 +166,8 @@ namespace Mediatek86.Vue
                 ///On ajoutera l'objet de type absence dans la liste générale absence et celle spécifique à une seul persoone
                 int idabsence= AccesDonnes.GetLesAbsences().Count() + 1;
                 int motifid = cbxMotifAbsence.SelectedIndex + 1;
-                string libellemotif = cbxMotifAbsence.SelectedItem.ToString();
-                Absence absence = new Absence(idabsence, personnelgere, DatepDatedebut.Value,motifid,libellemotif, DatepDateFin.Value);
+                Motif unmotifabs =(Motif) cbxMotifAbsence.SelectedItem;
+                Absence absence = new Absence(idabsence, personnelgere, DatepDatedebut.Value,unmotifabs    /*motifid,libellemotif*/, DatepDateFin.Value);
                 MessageBox.Show(absence.ToString());
                 AccesDonnes.GetLesAbsences().Add(absence);
                 listeabsdupersonnel.Add(absence);
@@ -322,7 +330,7 @@ namespace Mediatek86.Vue
                 uneabsence.Datedebut = DatepDatedebut.Value;
                 uneabsence.Datefin = DatepDateFin.Value;
                 string libelle = cbxMotifAbsence.SelectedItem.ToString();
-                uneabsence.Libelle = libelle;
+                uneabsence.MotifAbs.Libelle= libelle;
 
 
                 // Mise à des lbl après modif et visisilité de grp

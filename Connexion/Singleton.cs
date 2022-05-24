@@ -161,7 +161,7 @@ namespace Mediatek86.Connexion
         /// </summary>
         /// <param name="nameField">nom du champ</param>
         /// <returns>valeur du champ</returns>
-        public object Field(string nameField)
+        public object Field(/*string nameField*/int indicechamps)
         {
             if (reader is null)
             {
@@ -169,7 +169,8 @@ namespace Mediatek86.Connexion
             }
             try
             {
-                return reader[nameField];
+                // return reader[nameField];
+                return reader.GetValue(indicechamps);
             }
             catch
             {

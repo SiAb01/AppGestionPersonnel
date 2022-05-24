@@ -133,11 +133,6 @@ namespace Mediatek86.Vue
             // cbxMotifAbsence
             // 
             this.cbxMotifAbsence.FormattingEnabled = true;
-            this.cbxMotifAbsence.Items.AddRange(new object[] {
-            "vacances",
-            "maladie",
-            "motif familiale",
-            "congé parental"});
             this.cbxMotifAbsence.Location = new System.Drawing.Point(13, 151);
             this.cbxMotifAbsence.Name = "cbxMotifAbsence";
             this.cbxMotifAbsence.Size = new System.Drawing.Size(178, 24);

@@ -104,11 +104,18 @@ namespace Mediatek86.Vue
 
 
         }
+       /// <summary>
+       /// Constructeur de la form
+       /// </summary>
         public FrmPersonnel()
         {
             InitializeComponent();
             RemplirListeAbsence();
             button2.Visible = false;
+            ///Iniatialisation des combo services
+            cbxservice.Items.Add((string)Service.Service1Administratif.Nom);
+            cbxservice.Items.Add((string)Service.Service2MediationCult.Nom);
+            cbxservice.Items.Add((string)Service.Service3Pret.Nom);
 
         }
 
@@ -343,7 +350,7 @@ namespace Mediatek86.Vue
             grpaffichecontact.Visible = true;
             Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
             lblNomPrenom.Text = personnel.ToString();
-            lblfonction.Text = char.ToUpper(personnel.Nomservice[0]) +  personnel.Nomservice.Substring(1);
+            lblfonction.Text = char.ToUpper(personnel.ServicePersonnel.Nom[0]) + personnel.ServicePersonnel.Nom.Substring(1);
             lbltelephone.Text = personnel.Tel;
             lblEmail.Text = personnel.Mail;
 
@@ -366,8 +373,9 @@ namespace Mediatek86.Vue
               /// int idunpersonnel = (int)dtgPersonnel.SelectedRows[0].Cells["idpersonnel"].Value;
                 string serviceunpersonnel = cbxservice.SelectedItem.ToString();
                 int idunpersonnel = Personnel.ListePersonnels().Count() + 1;
-                
-                Personnel personnel = new Personnel((int)idunpersonnel, (string)txtnom.Text, (string)txtprenom.Text, (string)serviceunpersonnel, (string)txttelephone.Text, (string)txtEmail.Text);
+                Service unservice = (Service)cbxservice.SelectedItem;
+
+                Personnel personnel = new Personnel((int)idunpersonnel, (string)txtnom.Text, (string)txtprenom.Text, unservice, (string)txttelephone.Text, (string)txtEmail.Text);
                /// On utilise la propriété liste pour qu'elle recoit les donnnes que retourne la méthode Personne.ListePersonnel
                 Personnel.lalistepersonnel = Personnel.ListePersonnels();
                 Personnel.lalistepersonnel.Add(personnel);
@@ -379,7 +387,7 @@ namespace Mediatek86.Vue
                 grpaffichecontact.Visible = true;
                 //Affichage du profil nouvellement crée sur le côté gauche avec la possibilité de modifier et supprimer
                 lblNomPrenom.Text = personnel.ToString();
-                lblfonction.Text = char.ToUpper(personnel.Nomservice[0]) + personnel.Nomservice.Substring(1);
+                lblfonction.Text = char.ToUpper(personnel.ServicePersonnel.Nom[0]) + personnel.ServicePersonnel.Nom.Substring(1);
                 lbltelephone.Text = personnel.Tel;
                 lblEmail.Text = personnel.Mail;
                 dtgPersonnel.Enabled = true;
@@ -422,7 +430,7 @@ namespace Mediatek86.Vue
                 personnel.Prenom = txtprenom.Text;
                 personnel.Tel = txttelephone.Text;
                 personnel.Mail = txtEmail.Text;
-                personnel.Nomservice = cbxservice.SelectedItem.ToString();
+                personnel.ServicePersonnel.Nom = cbxservice.SelectedItem.ToString();
                 //txtnom.Text = personnel.Nom;
                 //txtprenom.Text = personnel.Prenom;
                 //txttelephone.Text = personnel.Tel;
@@ -440,14 +448,14 @@ namespace Mediatek86.Vue
                     Personnel.lalistepersonnel[index].Prenom = txtprenom.Text;
                     Personnel.lalistepersonnel[index].Tel = txttelephone.Text;
                     Personnel.lalistepersonnel[index].Mail = txtEmail.Text;
-                    Personnel.lalistepersonnel[index].Nomservice = cbxservice.SelectedItem.ToString();
+                    Personnel.lalistepersonnel[index].ServicePersonnel.Nom = cbxservice.SelectedItem.ToString();
 
                     MessageBox.Show("La fiche de " + Personnel.lalistepersonnel[index].ToString() + " a bien été modifié");
                     grpAjouterPersonnel.Visible = false;
                     grpaffichecontact.Visible = true;
                     //Affichage du profil nouvellement crée sur le côté gauche avec la possibilité de modifier et supprimer
                     lblNomPrenom.Text = personnel.ToString();
-                    lblfonction.Text = char.ToUpper(personnel.Nomservice[0]) + personnel.Nomservice.Substring(1);
+                    lblfonction.Text = char.ToUpper(personnel.ServicePersonnel.Nom[0]) + personnel.ServicePersonnel.Nom.Substring(1);
                     lbltelephone.Text = personnel.Tel;
                     lblEmail.Text = personnel.Mail;
 

@@ -240,10 +240,6 @@ namespace Mediatek86.Vue
             // cbxservice
             // 
             this.cbxservice.FormattingEnabled = true;
-            this.cbxservice.Items.AddRange(new object[] {
-            "Pret",
-            "Mediation",
-            "Administratif"});
             this.cbxservice.Location = new System.Drawing.Point(98, 83);
             this.cbxservice.Name = "cbxservice";
             this.cbxservice.Size = new System.Drawing.Size(190, 24);
