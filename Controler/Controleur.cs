@@ -16,6 +16,45 @@ namespace Mediatek86.Controler
     class Controleur
 
     {
+       
+
+
+
+
+
+        /// <summary>
+        /// Methode qui retourne la methode qui supp abs ds bdd
+        /// </summary>
+        /// <param name="personnelgere"></param>
+        /// <param name="absence"></param>
+        public static void DelAbsence(Personnel personnelgere, Absence absence)
+        {
+            AccesDonnes.SupprAbsence(personnelgere,absence);
+        }
+        /// <summary>
+        /// Ajoute une absence dans la bdd
+        /// </summary>
+        /// <param name="personnelgere"></param>
+        /// <param name="absence"></param>
+        public static void InsertAbs(Personnel personnelgere, Absence absence)
+        {
+            AccesDonnes.InsertAbsence(personnelgere, absence);
+        }
+
+        /// <summary>
+        /// Mets à jour une absence ds bdd
+        /// </summary>
+        /// <param name="personnelgere"></param>
+        /// <param name="absence"></param>
+        public static void UpdateAbs(Personnel personnelgere, Absence absence)
+        {
+            AccesDonnes.UpdateAbsence(personnelgere, absence);
+        }
+
+
+
+
+
 
 
         public static List<Absence> AfficherdtgAbsence(Personnel personnel)

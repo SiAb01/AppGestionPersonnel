@@ -92,7 +92,7 @@ namespace Mediatek86.Vue
             this.btnAjouterAbs.TabIndex = 5;
             this.btnAjouterAbs.Text = "Ajouter Absence";
             this.btnAjouterAbs.UseVisualStyleBackColor = true;
-            this.btnAjouterAbs.Click += new System.EventHandler(this.button1_Click);
+            this.btnAjouterAbs.Click += new System.EventHandler(this.btnajouterabs_Click);
             // 
             // label1
             // 
@@ -157,7 +157,7 @@ namespace Mediatek86.Vue
             this.btnValidAjoutAbs.TabIndex = 12;
             this.btnValidAjoutAbs.Text = "Valider";
             this.btnValidAjoutAbs.UseVisualStyleBackColor = true;
-            this.btnValidAjoutAbs.Click += new System.EventHandler(this.button2_Click);
+            this.btnValidAjoutAbs.Click += new System.EventHandler(this.btnValidAjoutAbsence_Click);
             // 
             // grpAjoutAbsence
             // 
@@ -178,7 +178,7 @@ namespace Mediatek86.Vue
             // 
             // btnValidModif
             // 
-            this.btnValidModif.Location = new System.Drawing.Point(60, 181);
+            this.btnValidModif.Location = new System.Drawing.Point(60, 182);
             this.btnValidModif.Name = "btnValidModif";
             this.btnValidModif.Size = new System.Drawing.Size(75, 23);
             this.btnValidModif.TabIndex = 13;

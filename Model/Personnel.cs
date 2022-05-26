@@ -17,8 +17,11 @@ namespace Mediatek86.Model
         private int idpersonnel;
         private string nom;
         private string prenom;
-        // private string nomservice;
-        private Service servicepersonnel;
+        private string nomservice;
+        /// <summary>
+        /// difficulté à implémenter l'objet service donc utilisation propriété string nomservice juste
+        /// </summary>
+        ////private Service servicepersonnel;
         private string tel;
         private string mail;
 
@@ -32,14 +35,14 @@ namespace Mediatek86.Model
         /// <param name="mail"></param>
         /// </summary>
 
-        public Personnel(int idpersonnel, string nom, string prenom, /*string nomservice*/Service servicepersonnel, string tel, string mail)
+        public Personnel(int idpersonnel, string nom, string prenom, string nomservice/*Service servicepersonnel*/, string tel, string mail)
         {
           ///  Personnel personnel;
             this.idpersonnel = idpersonnel;
             this.nom = nom;
             this.prenom = prenom;
-            //this.nomservice = nomservice;
-            this.servicepersonnel = servicepersonnel;
+            this.nomservice = nomservice;
+           // this.servicepersonnel = servicepersonnel;
             this.tel = tel;
             this.mail = mail;
 
@@ -49,8 +52,8 @@ namespace Mediatek86.Model
         public int Idpersonnel { get => idpersonnel; set => idpersonnel = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
-        // public string Nomservice { get => nomservice; set => nomservice = value; }
-        public Service ServicePersonnel { get => servicepersonnel; set => servicepersonnel= value; }
+        public string Nomservice { get => nomservice; set => nomservice = value; }
+        // public Service ServicePersonnel { get => servicepersonnel; set => servicepersonnel= value; }
 
         public string Tel { get => tel; set => tel = value; }
         public string Mail { get => mail; set => mail = value; }

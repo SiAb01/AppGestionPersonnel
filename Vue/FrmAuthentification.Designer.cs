@@ -42,7 +42,7 @@ namespace Mediatek86.Vue
             // 
             this.lbllogo1.AutoSize = true;
             this.lbllogo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllogo1.Location = new System.Drawing.Point(236, 25);
+            this.lbllogo1.Location = new System.Drawing.Point(553, 27);
             this.lbllogo1.Name = "lbllogo1";
             this.lbllogo1.Size = new System.Drawing.Size(354, 61);
             this.lbllogo1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace Mediatek86.Vue
             // 
             this.lbllogo2.AutoSize = true;
             this.lbllogo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lbllogo2.Location = new System.Drawing.Point(268, 88);
+            this.lbllogo2.Location = new System.Drawing.Point(577, 98);
             this.lbllogo2.Name = "lbllogo2";
             this.lbllogo2.Size = new System.Drawing.Size(286, 31);
             this.lbllogo2.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace Mediatek86.Vue
             // lbllogin
             // 
             this.lbllogin.AutoSize = true;
-            this.lbllogin.Location = new System.Drawing.Point(380, 242);
+            this.lbllogin.Location = new System.Drawing.Point(702, 273);
             this.lbllogin.Name = "lbllogin";
             this.lbllogin.Size = new System.Drawing.Size(43, 17);
             this.lbllogin.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace Mediatek86.Vue
             // labelmdp
             // 
             this.labelmdp.AutoSize = true;
-            this.labelmdp.Location = new System.Drawing.Point(366, 315);
+            this.labelmdp.Location = new System.Drawing.Point(669, 390);
             this.labelmdp.Name = "labelmdp";
             this.labelmdp.Size = new System.Drawing.Size(94, 17);
             this.labelmdp.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace Mediatek86.Vue
             // 
             // txtlogin
             // 
-            this.txtlogin.Location = new System.Drawing.Point(304, 278);
+            this.txtlogin.Location = new System.Drawing.Point(611, 315);
             this.txtlogin.Name = "txtlogin";
             this.txtlogin.Size = new System.Drawing.Size(215, 22);
             this.txtlogin.TabIndex = 4;
@@ -89,27 +89,28 @@ namespace Mediatek86.Vue
             // 
             // txtmotdepasse
             // 
-            this.txtmotdepasse.Location = new System.Drawing.Point(304, 351);
+            this.txtmotdepasse.Location = new System.Drawing.Point(611, 426);
             this.txtmotdepasse.Name = "txtmotdepasse";
             this.txtmotdepasse.Size = new System.Drawing.Size(215, 22);
             this.txtmotdepasse.TabIndex = 5;
+            this.txtmotdepasse.ModifiedChanged += new System.EventHandler(this.txtmotdepasse_ModifiedChanged);
             // 
             // btnConnexion
             // 
-            this.btnConnexion.Location = new System.Drawing.Point(350, 390);
+            this.btnConnexion.Location = new System.Drawing.Point(654, 471);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(119, 27);
             this.btnConnexion.TabIndex = 6;
             this.btnConnexion.Text = "Se Connecter";
             this.btnConnexion.UseVisualStyleBackColor = true;
-            this.btnConnexion.Click += new System.EventHandler(this.button1_Click);
+            this.btnConnexion.Click += new System.EventHandler(this.Btn_Connection_Click);
             // 
             // FrmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1482, 1055);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtmotdepasse);
             this.Controls.Add(this.txtlogin);

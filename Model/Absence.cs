@@ -21,13 +21,13 @@ namespace Mediatek86.Model
         //private string prenom;
         private DateTime datedebut ;
         //                      attribut avant remplacement par un objet motif 
-        //private int idmotif;
-        //private string libelle;
+        private int idmotif;
+        private string libelle;
 
-        private Motif motifabs;
+      //  private Motif motifabs;
         private DateTime datefin ;
 
-        public Absence(int idabsence,Personnel unpersonnel,/*int idpersonnel, string nom, string prenom,*/ DateTime datedebut, Motif motifabs/*int idmotif, string libelle*/, DateTime datefin)
+        public Absence(int idabsence,Personnel unpersonnel,/*int idpersonnel, string nom, string prenom,*/ DateTime datedebut,/* Motif motifabs*/int idmotif, string libelle, DateTime datefin)
         {
             
             this.idabsence = idabsence;
@@ -37,9 +37,9 @@ namespace Mediatek86.Model
             //this.nom = nom;
             //this.prenom = prenom;  
             this.datedebut = datedebut;
-            this.motifabs = motifabs;
-            //this.idmotif = idmotif;
-            //this.libelle = libelle;
+            //this.motifabs = motifabs;
+            this.idmotif = idmotif;
+            this.libelle = libelle;
             this.datefin = datefin;
         }
 
@@ -50,9 +50,9 @@ namespace Mediatek86.Model
          // public string Prenom { get => prenom; set => prenom = value; } 
         public DateTime Datedebut { get => datedebut; set => datedebut = value; }
 
-        public Motif MotifAbs { get => motifabs; set => motifabs = value; }
-        //public int Idmotif { get => idmotif; set => idmotif = value; }
-        //public string Libelle { get => libelle; set => libelle = value; }
+       // public Motif MotifAbs { get => motifabs; set => motifabs = value; }
+        public int Idmotif { get => idmotif; set => idmotif = value; }
+        public string Libelle { get => libelle; set => libelle = value; }
         public DateTime Datefin { get => datefin; set => datefin = value; }
 
         /// <summary>

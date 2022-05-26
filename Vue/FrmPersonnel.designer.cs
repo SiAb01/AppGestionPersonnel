@@ -244,6 +244,7 @@ namespace Mediatek86.Vue
             this.cbxservice.Name = "cbxservice";
             this.cbxservice.Size = new System.Drawing.Size(190, 24);
             this.cbxservice.TabIndex = 18;
+            this.cbxservice.SelectedIndexChanged += new System.EventHandler(this.cbxservice_SelectedIndexChanged);
             // 
             // label6
             // 

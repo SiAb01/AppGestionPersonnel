@@ -12,5 +12,17 @@ namespace Mediatek86.Model
     {
         private string login;
         private string pwd;
+
+        public Responsable(string login, string pwd)
+        {
+            this.login = login;
+            this.pwd = pwd;
+        }
+
+        public string Login { get => login; set => login = value; }
+        public string Pwd { get => pwd; set => pwd = value; }
+
+
+
     }
 }

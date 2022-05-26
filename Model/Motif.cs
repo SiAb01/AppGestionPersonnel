@@ -46,7 +46,19 @@ namespace Mediatek86.Model
         /// </summary>
         /// <returns>liste  objet motifs (id, libellle</returns>
         /// 
-        public static List<Motif> lestmotif = new List<Motif>();
+        public static List<Motif> GetMotifs()
+        {
+            List<Motif> lesmotifs = new List<Motif> ();
+            lesmotifs.Add(Motif1Vacances);
+            lesmotifs.Add(Moti2fMaladie);
+            lesmotifs.Add(Motif3Familiale);
+            lesmotifs.Add(Motif4CongeParental);
+
+            return lesmotifs;
+
+
+        }
+
 
         /// <summary>
         /// 

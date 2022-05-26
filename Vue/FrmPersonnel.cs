@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Mediatek86.Model;
 using Mediatek86.Dal;
 using Mediatek86.Connexion;
+using MySql.Data.MySqlClient;
 
 namespace Mediatek86.Vue
 { 
@@ -31,8 +32,12 @@ namespace Mediatek86.Vue
 
         public static Personnel personnelAbs;
 
+        BindingSource bdgcbxservice = new BindingSource();
+
 
         public static DataGrid dtgpersonnel = new DataGrid();
+
+        static List<Service> lesservices = Service.GetService();
     
         /// <summary>
         /// Objet pour gérer la liste des développeurs
@@ -86,7 +91,7 @@ namespace Mediatek86.Vue
         }
         public void RemplirListeAbsence()
         {
-            Personnel.lalistepersonnel = Personnel.ListePersonnels();
+            Personnel.lalistepersonnel = AccesDonnes.GetLesPersonnels();
             bdgPersonnel.DataSource = Personnel.lalistepersonnel;
             dtgPersonnel.DataSource = bdgPersonnel;
             dtgPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -113,10 +118,11 @@ namespace Mediatek86.Vue
             RemplirListeAbsence();
             button2.Visible = false;
             ///Iniatialisation des combo services
-            cbxservice.Items.Add((string)Service.Service1Administratif.Nom);
-            cbxservice.Items.Add((string)Service.Service2MediationCult.Nom);
-            cbxservice.Items.Add((string)Service.Service3Pret.Nom);
+            ///
+           
 
+            bdgcbxservice.DataSource = lesservices;
+            cbxservice.DataSource = bdgcbxservice;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,7 +161,7 @@ namespace Mediatek86.Vue
                 {    // int idunpersonnel = (int)dtgPersonnel.SelectedRows[0].Cells["idpersonnel"].Value;
                     dtgPersonnel.Visible = false;
 
-
+                    AccesDonnes.SupprPersonnel(personnel);
 
                     // Supprimer le personnel dans la datagrid pour éviter d'avoir une ligne vide dans le dtg
                     dtgPersonnel.Rows.RemoveAt(dtgPersonnel.SelectedRows[0].Index);
@@ -234,7 +240,7 @@ namespace Mediatek86.Vue
             btnValidModif.Visible = false;
             dtgPersonnel.Enabled = false;
                 grpAjouterPersonnel.Visible = true;
-                if (grpaffichecontact.Visible = true)
+                if (grpaffichecontact.Visible == true)
                     grpaffichecontact.Visible = false;
            
           //  }
@@ -247,8 +253,8 @@ namespace Mediatek86.Vue
             btnValidModif.Visible = true;
             btnValidAjout.Visible = false;
             grpAjouterPersonnel.Visible = true;
-            if (grpaffichecontact.Visible =  true)
-                grpaffichecontact.Visible = false;
+            if (grpaffichecontact.Visible == true)
+            { grpaffichecontact.Visible = false; }
 
             // Préinscriotion des champs selon la personne qui a été cliqué
 
@@ -257,6 +263,9 @@ namespace Mediatek86.Vue
             txtprenom.Text = personnel.Prenom;
             txttelephone.Text = personnel.Tel;
             txtEmail.Text = personnel.Mail;
+            cbxservice.SelectedIndex = cbxservice.FindStringExact(personnel.Nomservice);
+
+
            // CHECK APRES DEFINITION  CLASSE SERVICE
 
 
@@ -267,7 +276,7 @@ namespace Mediatek86.Vue
         private void lstpersonnel_MouseClick(object sender, MouseEventArgs e)
         {
             grpaffichecontact.Visible = true;
-            if (grpAjouterPersonnel.Visible = true)
+            if (grpAjouterPersonnel.Visible == true)
                 grpAjouterPersonnel.Visible = false;
         }
 
@@ -350,7 +359,7 @@ namespace Mediatek86.Vue
             grpaffichecontact.Visible = true;
             Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
             lblNomPrenom.Text = personnel.ToString();
-            lblfonction.Text = char.ToUpper(personnel.ServicePersonnel.Nom[0]) + personnel.ServicePersonnel.Nom.Substring(1);
+            lblfonction.Text = char.ToUpper(personnel.Nomservice[0]) + personnel.Nomservice.Substring(1);
             lbltelephone.Text = personnel.Tel;
             lblEmail.Text = personnel.Mail;
 
@@ -373,21 +382,27 @@ namespace Mediatek86.Vue
               /// int idunpersonnel = (int)dtgPersonnel.SelectedRows[0].Cells["idpersonnel"].Value;
                 string serviceunpersonnel = cbxservice.SelectedItem.ToString();
                 int idunpersonnel = Personnel.ListePersonnels().Count() + 1;
-                Service unservice = (Service)cbxservice.SelectedItem;
+                Service service = (Service)bdgcbxservice.List[bdgcbxservice.Position];
+                string nomservice = service.Nom;
+                int idservice = service.Idservice;
 
-                Personnel personnel = new Personnel((int)idunpersonnel, (string)txtnom.Text, (string)txtprenom.Text, unservice, (string)txttelephone.Text, (string)txtEmail.Text);
-               /// On utilise la propriété liste pour qu'elle recoit les donnnes que retourne la méthode Personne.ListePersonnel
-                Personnel.lalistepersonnel = Personnel.ListePersonnels();
-                Personnel.lalistepersonnel.Add(personnel);
-                 MessageBox.Show("Le personnel " + personnel.ToString() + "a été ajouté .", "Information");
-
+                Personnel personnel = new Personnel((int)idunpersonnel, (string)txtnom.Text, (string)txtprenom.Text, (string)nomservice, (string)txttelephone.Text, (string)txtEmail.Text);
+                ///Ajout dans base de donnée
+                AccesDonnes.AjoutPersonnel(personnel ,idservice);
+                /// On utilise la propriété liste pour qu'elle recoit les donnnes que retourne la méthode Personne.ListePersonnel
+                //Personnel.lalistepersonnel = Personnel.ListePersonnels();
+                //Personnel.lalistepersonnel.Add(personnel);
+                
+                MessageBox.Show("Le personnel " + personnel.ToString() + "a été ajouté .", "Information");
+              
+                bdgcbxservice.ResetBindings(true);
                 MajAjoutPersonnel();
 
                 grpAjouterPersonnel.Visible = false;
                 grpaffichecontact.Visible = true;
                 //Affichage du profil nouvellement crée sur le côté gauche avec la possibilité de modifier et supprimer
                 lblNomPrenom.Text = personnel.ToString();
-                lblfonction.Text = char.ToUpper(personnel.ServicePersonnel.Nom[0]) + personnel.ServicePersonnel.Nom.Substring(1);
+                lblfonction.Text = char.ToUpper(personnel.Nomservice[0]) + personnel.Nomservice.Substring(1);
                 lbltelephone.Text = personnel.Tel;
                 lblEmail.Text = personnel.Mail;
                 dtgPersonnel.Enabled = true;
@@ -430,7 +445,35 @@ namespace Mediatek86.Vue
                 personnel.Prenom = txtprenom.Text;
                 personnel.Tel = txttelephone.Text;
                 personnel.Mail = txtEmail.Text;
-                personnel.ServicePersonnel.Nom = cbxservice.SelectedItem.ToString();
+                Service service = (Service)bdgcbxservice.List[bdgcbxservice.Position];
+                int ideservice = service.Idservice;
+                string nomservice = service.Nom;
+                personnel.Nomservice = nomservice;
+                //personnel.Nomservice = cbxservice.SelectedItem.ToString();
+                
+
+
+                //switch (personnel.Nomservice)
+                //{
+                //    case "administratif":
+                //        ideservice = Service.Service1Administratif.Idservice;
+                //        break;
+
+                //    case "médiation culturelle":
+                //        ideservice = Service.Service2MediationCult.Idservice;
+                //        break;
+                //    case "pret":
+                //        ideservice = Service.Service3Pret.Idservice;
+                //        break;
+
+
+                //}
+                string ut = personnel.Idpersonnel.ToString();
+                MessageBox.Show("Voici le personnel" + personnel.ToString() + " à l'idservice" + ideservice.ToString() + personnel.Nomservice + " id" + ut)    ; 
+
+                ///MODIFICATION DANS BDD///
+                
+
                 //txtnom.Text = personnel.Nom;
                 //txtprenom.Text = personnel.Prenom;
                 //txttelephone.Text = personnel.Tel;
@@ -439,27 +482,39 @@ namespace Mediatek86.Vue
                 //nomservice = personnel.Nomservice;
                 // if (Personnel.lalistepersonnel.Contains(personnel))
                 ///On cherche l'index de personnel dans la liste Personnel.lalistepersonnel pour pouvoir mettre à jour les données saisiés
-                Personnel item = personnel;
-                int index = Personnel.lalistepersonnel.FindIndex(a => a == item);
+              
+                
+                //// Modification liste Personnel ////
+                
+                
+                
+                
+                //Personnel item = personnel;
+                //int index = Personnel.lalistepersonnel.FindIndex(a => a == item);
 
-                if (index != -1)
-                {
-                    Personnel.lalistepersonnel[index].Nom = txtnom.Text;
-                    Personnel.lalistepersonnel[index].Prenom = txtprenom.Text;
-                    Personnel.lalistepersonnel[index].Tel = txttelephone.Text;
-                    Personnel.lalistepersonnel[index].Mail = txtEmail.Text;
-                    Personnel.lalistepersonnel[index].ServicePersonnel.Nom = cbxservice.SelectedItem.ToString();
-
-                    MessageBox.Show("La fiche de " + Personnel.lalistepersonnel[index].ToString() + " a bien été modifié");
+                //if (index != -1)
+                //{
+                //    Personnel.lalistepersonnel[index].Nom = txtnom.Text;
+                //    Personnel.lalistepersonnel[index].Prenom = txtprenom.Text;
+                //    Personnel.lalistepersonnel[index].Tel = txttelephone.Text;
+                //    Personnel.lalistepersonnel[index].Mail = txtEmail.Text;
+                //    Personnel.lalistepersonnel[index].Nomservice = cbxservice.SelectedItem.ToString();
+                //}
+                   
+                
+                MessageBox.Show("La fiche de " + personnel.ToString() + " a bien été modifié");
                     grpAjouterPersonnel.Visible = false;
                     grpaffichecontact.Visible = true;
                     //Affichage du profil nouvellement crée sur le côté gauche avec la possibilité de modifier et supprimer
                     lblNomPrenom.Text = personnel.ToString();
-                    lblfonction.Text = char.ToUpper(personnel.ServicePersonnel.Nom[0]) + personnel.ServicePersonnel.Nom.Substring(1);
+                    lblfonction.Text = char.ToUpper(personnel.Nomservice[0]) + personnel.Nomservice.Substring(1);
                     lbltelephone.Text = personnel.Tel;
                     lblEmail.Text = personnel.Mail;
 
-                    // bdgPersonnel = new Binding
+
+                    AccesDonnes.MajduPersonnel(personnel, ideservice);
+
+                bdgPersonnel.ResetBindings(true);
 
                     List<Personnel> lesPersonnelsvu = Personnel.lalistepersonnel;
 
@@ -469,7 +524,7 @@ namespace Mediatek86.Vue
                     dtgPersonnel.MultiSelect = false;
                     dtgPersonnel.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     dtgPersonnel.ReadOnly = true;
-                }
+                
 
             
 
@@ -505,6 +560,11 @@ namespace Mediatek86.Vue
         private void dtgPersonnel_selectionchanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void cbxservice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
