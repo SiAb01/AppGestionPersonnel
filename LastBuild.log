@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2022.2.6.0" projectFile="C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\encoretest.shfbproj" started="30/05/2022 18:00:40">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+    C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins
+    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components
+Using framework reflection data for &#39;.NET Framework 4.7.2&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2022.2.6.0
+Copyright &#169; 2006-2022, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: C:\Users\sveen\source\repos\AppGestionPersonnel\bin\Debug\Mediatek86.xml
+Source: C:\Users\sveen\source\repos\AppGestionPersonnel\bin\Debug\Mediatek86.exe
+    Found assembly &#39;C:\Users\sveen\source\repos\AppGestionPersonnel\bin\Debug\Mediatek86.exe&#39;
+
+Copying XML comments files
+    C:\Users\sveen\source\repos\AppGestionPersonnel\bin\Debug\Mediatek86.xml -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Mediatek86.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, Anglais (&#201;tats-Unis))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00,0078
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00,0090
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - GenerateRefInfo-40908799-abae-4532-b053-2fe87c3820e2.proj]
+La g‚n‚ration a d‚marr‚ 30/05/2022 18:00:42.
+Projet &quot;C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\GenerateRefInfo-40908799-abae-4532-b053-2fe87c3820e2.proj&quot; sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire &quot;obj\Debug\&quot;.
+GenerateBindingRedirects:
+  Aucune redirection de liaison sugg‚r‚e … partir de ResolveAssemblyReferences.
+GenerateRefInfo:
+  Microsoft.Build (v16.11.1+3e40a09f830fce5bb34916a4d20255c0876c9b5d)
+  &#184; Microsoft Corporation. All rights reserved.
+  No source code context base path specified.  Source context information is unavailable.
+  Loaded 1 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 5 namespaces, 11 types, and 84 members
+  Merging duplicate type and member information
+  Merged 0 duplicate type(s) and 0 duplicate member(s)
+G‚n‚ration du projet &quot;C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\GenerateRefInfo-40908799-abae-4532-b053-2fe87c3820e2.proj&quot; termin‚e (cibles par d‚faut).
+    Last step completed in 00:00:01,4280
+</buildStep>
+<buildStep step="ApplyDocumentModel">
+Applying document model to reflection output...
+    Last step completed in 00:00:00,2174
+</buildStep>
+<buildStep step="AddApiTopicFilenames">
+Adding topic filenames to API members...
+    Last step completed in 00:00:00,1366
+</buildStep>
+<buildStep step="GenerateApiTopicManifest">
+Generating API topic manifest...
+    Last step completed in 00:00:00,0898
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00,0747
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00,0010
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file for API content...
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00,0655
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00,2220
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\sandcastle.config
+  Updating reference topic configurations.
+  No conceptual content.  Removing conceptual content components.
+    Last step completed in 00:00:00,0035
+</buildStep>
+<buildStep step="BuildTopics">
+Building help topics...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - BuildTopics.proj]
+La g‚n‚ration a d‚marr‚ 30/05/2022 18:00:44.
+Projet &quot;C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj&quot; sur le noud 1 (cibles par d‚faut).
+BuildTopics:
+  Microsoft.Build (v16.11.1+3e40a09f830fce5bb34916a4d20255c0876c9b5d)
+  &#184; Microsoft Corporation. All rights reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [N:Mediatek86.Connexion] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:Mediatek86.Controler] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Controler.Controleur.ListeMotif] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Controler.Controleur.TotalAbsence(Mediatek86.Model.Absence)] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:Mediatek86.Dal] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Dal.AccesDonnes.ControleAuthentification(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Dal.AccesDonnes.GetLesAbsences] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Dal.AccesDonnes.GetLesPersonnels] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Dal.AccesDonnes.GetMotifabs(MySql.Data.MySqlClient.MySqlDataReader,Mediatek86.Model.Motif)] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Mediatek86.Dal.AccesDonnes.GetMotifabs(MySql.Data.MySqlClient.MySqlDataReader,Mediatek86.Model.Motif)] Unknown reference link target &#39;T:MySql.Data.MySqlClient.MySqlDataReader&#39;. [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:Mediatek86.Model] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Model.Motif.ToString] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Model.Service.GetService] Missing &lt;returns&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Mediatek86.Model.Service.ToString] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:Mediatek86.Vue] Missing &lt;summary&gt; documentation [C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj]
+  Processed 128 topic(s)
+  15 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 1 of 30.
+G‚n‚ration du projet &quot;C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\BuildTopics.proj&quot; termin‚e (cibles par d‚faut).
+    Last step completed in 00:00:08,1958
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00,0026
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - ExtractHtmlInfo.proj]
+    Last step completed in 00:00:00,6348
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\AlertCaution.png -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\AlertNote.png -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\AlertSecurity.png -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\CFW.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\CodeExample.png -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\favicon.ico -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privclass.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privdelegate.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privenumeration.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privevent.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privextension.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privfield.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privinterface.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privmethod.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privproperty.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\privstructure.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protclass.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protdelegate.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protenumeration.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protevent.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protextension.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protfield.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protinterface.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protmethod.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protoperator.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protproperty.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\protstructure.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubclass.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubdelegate.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubenumeration.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubevent.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubextension.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubfield.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubinterface.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubmethod.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\puboperator.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubproperty.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\pubstructure.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\SectionCollapsed.png -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\SectionExpanded.png -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\slMobile.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\static.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\icons\xna.gif -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\scripts\branding.js -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-cs-CZ.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-de-DE.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-en-US.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-es-ES.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-fr-FR.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-Help1.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-HelpViewer.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-it-IT.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-ja-JP.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-ko-KR.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-pl-PL.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-pt-BR.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-ru-RU.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-tr-TR.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-Website.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-zh-CN.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding-zh-TW.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Components\VS2013\styles\branding.css -&gt; C:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00,1731
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00,0040
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - Build1xHelpFile.proj]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling c:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\Documentation.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 2 seconds
+  
+  130	Topics
+  
+  1,274	Local links
+  
+  0	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created c:\Users\sveen\OneDrive\Documents\btssiodossier\docu17h\Help\Working\Output\HtmlHelp1\Documentation.chm, 266,117 bytes
+  
+  Compression decreased file by 2,102,508 bytes.
+  
+    Last step completed in 00:00:02,8314
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00,2043
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 30/05/2022 18:00:55.  Total time: 00:00:15,1608
+
+</buildStep>
+</shfbBuild>
