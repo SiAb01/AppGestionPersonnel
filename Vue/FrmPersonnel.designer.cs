@@ -1,7 +1,9 @@
 ﻿
 namespace Mediatek86.Vue
-{
-    partial class FrmPersonnel
+{   /// <summary>
+///  classe forme qui va gerer la vue
+/// </summary>
+    public partial class FrmPersonnel
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +33,9 @@ namespace Mediatek86.Vue
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonnel));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PicIcone = new System.Windows.Forms.PictureBox();
             this.lblNomPrenom = new System.Windows.Forms.Label();
             this.lblfonction = new System.Windows.Forms.Label();
@@ -38,12 +43,12 @@ namespace Mediatek86.Vue
             this.lblEmail = new System.Windows.Forms.Label();
             this.btnModifFiche = new System.Windows.Forms.Button();
             this.btnSupprimerFiche = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
             this.grpaffichecontact = new System.Windows.Forms.GroupBox();
             this.grpAjouterPersonnel = new System.Windows.Forms.GroupBox();
-            this.btnValidModif = new System.Windows.Forms.Button();
             this.btnValidAjout = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnValidModif = new System.Windows.Forms.Button();
             this.txttelephone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,22 +59,24 @@ namespace Mediatek86.Vue
             this.txtnom = new System.Windows.Forms.TextBox();
             this.txtprenom = new System.Windows.Forms.TextBox();
             this.btnAjoutPersonnel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnAbsPersonnel = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dtgPersonnel = new System.Windows.Forms.DataGridView();
             this.btnRetour = new System.Windows.Forms.Button();
             this.bdgPersonnel = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PicIcone)).BeginInit();
             this.grpaffichecontact.SuspendLayout();
             this.grpAjouterPersonnel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgPersonnel)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PicIcone
             // 
             this.PicIcone.Image = ((System.Drawing.Image)(resources.GetObject("PicIcone.Image")));
-            this.PicIcone.Location = new System.Drawing.Point(43, 23);
+            this.PicIcone.Location = new System.Drawing.Point(161, 131);
             this.PicIcone.Name = "PicIcone";
             this.PicIcone.Size = new System.Drawing.Size(156, 158);
             this.PicIcone.TabIndex = 0;
@@ -91,7 +98,7 @@ namespace Mediatek86.Vue
             this.lblfonction.AutoSize = true;
             this.lblfonction.Location = new System.Drawing.Point(99, 20);
             this.lblfonction.Name = "lblfonction";
-            this.lblfonction.Size = new System.Drawing.Size(72, 17);
+            this.lblfonction.Size = new System.Drawing.Size(79, 19);
             this.lblfonction.TabIndex = 3;
             this.lblfonction.Text = "(Fonction)";
             this.lblfonction.Click += new System.EventHandler(this.label1_Click_1);
@@ -101,7 +108,7 @@ namespace Mediatek86.Vue
             this.lbltelephone.AutoSize = true;
             this.lbltelephone.Location = new System.Drawing.Point(19, 93);
             this.lbltelephone.Name = "lbltelephone";
-            this.lbltelephone.Size = new System.Drawing.Size(84, 17);
+            this.lbltelephone.Size = new System.Drawing.Size(89, 19);
             this.lbltelephone.TabIndex = 4;
             this.lbltelephone.Text = "Téléphone :";
             // 
@@ -110,7 +117,7 @@ namespace Mediatek86.Vue
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(28, 136);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(50, 17);
+            this.lblEmail.Size = new System.Drawing.Size(54, 19);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email :";
             // 
@@ -134,16 +141,16 @@ namespace Mediatek86.Vue
             this.btnSupprimerFiche.UseVisualStyleBackColor = true;
             this.btnSupprimerFiche.Click += new System.EventHandler(this.btnSupprimer_onclick);
             // 
-            // label1
+            // lblTitre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(429, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Gestion du personnel";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(191, 26);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(467, 49);
+            this.lblTitre.TabIndex = 8;
+            this.lblTitre.Text = "Gestion du personnel";
+            this.lblTitre.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // grpaffichecontact
             // 
@@ -153,9 +160,10 @@ namespace Mediatek86.Vue
             this.grpaffichecontact.Controls.Add(this.lbltelephone);
             this.grpaffichecontact.Controls.Add(this.lblfonction);
             this.grpaffichecontact.Controls.Add(this.lblNomPrenom);
-            this.grpaffichecontact.Location = new System.Drawing.Point(12, 201);
+            this.grpaffichecontact.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpaffichecontact.Location = new System.Drawing.Point(29, 319);
             this.grpaffichecontact.Name = "grpaffichecontact";
-            this.grpaffichecontact.Size = new System.Drawing.Size(311, 251);
+            this.grpaffichecontact.Size = new System.Drawing.Size(343, 251);
             this.grpaffichecontact.TabIndex = 10;
             this.grpaffichecontact.TabStop = false;
             this.grpaffichecontact.Visible = false;
@@ -163,9 +171,9 @@ namespace Mediatek86.Vue
             // 
             // grpAjouterPersonnel
             // 
-            this.grpAjouterPersonnel.Controls.Add(this.btnValidModif);
             this.grpAjouterPersonnel.Controls.Add(this.btnValidAjout);
             this.grpAjouterPersonnel.Controls.Add(this.txtEmail);
+            this.grpAjouterPersonnel.Controls.Add(this.btnValidModif);
             this.grpAjouterPersonnel.Controls.Add(this.txttelephone);
             this.grpAjouterPersonnel.Controls.Add(this.label8);
             this.grpAjouterPersonnel.Controls.Add(this.label7);
@@ -175,29 +183,20 @@ namespace Mediatek86.Vue
             this.grpAjouterPersonnel.Controls.Add(this.label2);
             this.grpAjouterPersonnel.Controls.Add(this.txtnom);
             this.grpAjouterPersonnel.Controls.Add(this.txtprenom);
-            this.grpAjouterPersonnel.Location = new System.Drawing.Point(18, 201);
+            this.grpAjouterPersonnel.Location = new System.Drawing.Point(12, 341);
             this.grpAjouterPersonnel.Name = "grpAjouterPersonnel";
-            this.grpAjouterPersonnel.Size = new System.Drawing.Size(305, 261);
+            this.grpAjouterPersonnel.Size = new System.Drawing.Size(479, 346);
             this.grpAjouterPersonnel.TabIndex = 24;
             this.grpAjouterPersonnel.TabStop = false;
             this.grpAjouterPersonnel.Visible = false;
             this.grpAjouterPersonnel.Enter += new System.EventHandler(this.grpAjouterPersonnel_Enter);
             // 
-            // btnValidModif
-            // 
-            this.btnValidModif.Location = new System.Drawing.Point(119, 218);
-            this.btnValidModif.Name = "btnValidModif";
-            this.btnValidModif.Size = new System.Drawing.Size(140, 27);
-            this.btnValidModif.TabIndex = 24;
-            this.btnValidModif.Text = "Valider";
-            this.btnValidModif.UseVisualStyleBackColor = true;
-            this.btnValidModif.Click += new System.EventHandler(this.btnValidModif_Click);
-            // 
             // btnValidAjout
             // 
-            this.btnValidAjout.Location = new System.Drawing.Point(119, 218);
+            this.btnValidAjout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidAjout.Location = new System.Drawing.Point(196, 270);
             this.btnValidAjout.Name = "btnValidAjout";
-            this.btnValidAjout.Size = new System.Drawing.Size(140, 27);
+            this.btnValidAjout.Size = new System.Drawing.Size(109, 37);
             this.btnValidAjout.TabIndex = 23;
             this.btnValidAjout.Text = "Valider";
             this.btnValidAjout.UseVisualStyleBackColor = true;
@@ -205,24 +204,36 @@ namespace Mediatek86.Vue
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(98, 156);
+            this.txtEmail.Location = new System.Drawing.Point(88, 204);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(190, 22);
+            this.txtEmail.Size = new System.Drawing.Size(381, 22);
             this.txtEmail.TabIndex = 22;
+            // 
+            // btnValidModif
+            // 
+            this.btnValidModif.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidModif.Location = new System.Drawing.Point(196, 270);
+            this.btnValidModif.Name = "btnValidModif";
+            this.btnValidModif.Size = new System.Drawing.Size(109, 37);
+            this.btnValidModif.TabIndex = 24;
+            this.btnValidModif.Text = "Valider";
+            this.btnValidModif.UseVisualStyleBackColor = true;
+            this.btnValidModif.Click += new System.EventHandler(this.btnValidModif_Click);
             // 
             // txttelephone
             // 
-            this.txttelephone.Location = new System.Drawing.Point(98, 118);
+            this.txttelephone.Location = new System.Drawing.Point(88, 160);
             this.txttelephone.Name = "txttelephone";
-            this.txttelephone.Size = new System.Drawing.Size(190, 22);
+            this.txttelephone.Size = new System.Drawing.Size(381, 22);
             this.txttelephone.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 156);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(18, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 17);
+            this.label8.Size = new System.Drawing.Size(46, 19);
             this.label8.TabIndex = 20;
             this.label8.Text = "Email";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -230,9 +241,10 @@ namespace Mediatek86.Vue
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 123);
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 17);
+            this.label7.Size = new System.Drawing.Size(81, 19);
             this.label7.TabIndex = 19;
             this.label7.Text = "Télephone";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -240,103 +252,135 @@ namespace Mediatek86.Vue
             // cbxservice
             // 
             this.cbxservice.FormattingEnabled = true;
-            this.cbxservice.Location = new System.Drawing.Point(98, 83);
+            this.cbxservice.Location = new System.Drawing.Point(88, 114);
             this.cbxservice.Name = "cbxservice";
-            this.cbxservice.Size = new System.Drawing.Size(190, 24);
+            this.cbxservice.Size = new System.Drawing.Size(381, 24);
             this.cbxservice.TabIndex = 18;
             this.cbxservice.SelectedIndexChanged += new System.EventHandler(this.cbxservice_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 83);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 17);
+            this.label6.Size = new System.Drawing.Size(58, 19);
             this.label6.TabIndex = 17;
             this.label6.Text = "Service";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 49);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 17);
+            this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 14;
             this.label3.Text = "Prénom";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 20);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(41, 19);
             this.label2.TabIndex = 13;
             this.label2.Text = "Nom";
             // 
             // txtnom
             // 
-            this.txtnom.Location = new System.Drawing.Point(98, 15);
+            this.txtnom.Location = new System.Drawing.Point(87, 21);
             this.txtnom.Name = "txtnom";
-            this.txtnom.Size = new System.Drawing.Size(190, 22);
+            this.txtnom.Size = new System.Drawing.Size(382, 22);
             this.txtnom.TabIndex = 12;
             this.txtnom.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtprenom
             // 
-            this.txtprenom.Location = new System.Drawing.Point(98, 49);
+            this.txtprenom.Location = new System.Drawing.Point(87, 69);
             this.txtprenom.Name = "txtprenom";
-            this.txtprenom.Size = new System.Drawing.Size(190, 22);
+            this.txtprenom.Size = new System.Drawing.Size(382, 22);
             this.txtprenom.TabIndex = 11;
             // 
             // btnAjoutPersonnel
             // 
-            this.btnAjoutPersonnel.Location = new System.Drawing.Point(232, 76);
+            this.btnAjoutPersonnel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjoutPersonnel.Location = new System.Drawing.Point(27, 131);
             this.btnAjoutPersonnel.Name = "btnAjoutPersonnel";
-            this.btnAjoutPersonnel.Size = new System.Drawing.Size(68, 25);
+            this.btnAjoutPersonnel.Size = new System.Drawing.Size(117, 37);
             this.btnAjoutPersonnel.TabIndex = 25;
             this.btnAjoutPersonnel.Text = "Ajouter Personnel";
             this.btnAjoutPersonnel.UseVisualStyleBackColor = true;
-            this.btnAjoutPersonnel.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnAjoutPersonnel.Click += new System.EventHandler(this.btnAjouterPersonnel);
             // 
-            // button2
+            // BtnAbsPersonnel
             // 
-            this.button2.Location = new System.Drawing.Point(208, 125);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Absences";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnGererAbs);
+            this.BtnAbsPersonnel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAbsPersonnel.Location = new System.Drawing.Point(29, 194);
+            this.BtnAbsPersonnel.Name = "BtnAbsPersonnel";
+            this.BtnAbsPersonnel.Size = new System.Drawing.Size(115, 36);
+            this.BtnAbsPersonnel.TabIndex = 26;
+            this.BtnAbsPersonnel.Text = "Absences";
+            this.BtnAbsPersonnel.UseVisualStyleBackColor = true;
+            this.BtnAbsPersonnel.Click += new System.EventHandler(this.btnGererAbs);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(664, 9);
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1244, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 23);
+            this.button3.Size = new System.Drawing.Size(236, 93);
             this.button3.TabIndex = 27;
-            this.button3.Text = "Se Deconnecter";
+            this.button3.Text = "Deconnexion";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dtgPersonnel
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPersonnel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPersonnel.Location = new System.Drawing.Point(345, 51);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgPersonnel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgPersonnel.Location = new System.Drawing.Point(514, 145);
             this.dtgPersonnel.Name = "dtgPersonnel";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPersonnel.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgPersonnel.RowHeadersVisible = false;
             this.dtgPersonnel.RowHeadersWidth = 51;
             this.dtgPersonnel.RowTemplate.Height = 24;
-            this.dtgPersonnel.Size = new System.Drawing.Size(460, 420);
+            this.dtgPersonnel.Size = new System.Drawing.Size(928, 476);
             this.dtgPersonnel.TabIndex = 28;
             this.dtgPersonnel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonnel_CellClick);
             this.dtgPersonnel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnRetour
             // 
-            this.btnRetour.Location = new System.Drawing.Point(345, 6);
+            this.btnRetour.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetour.Location = new System.Drawing.Point(1037, 0);
             this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(57, 23);
+            this.btnRetour.Size = new System.Drawing.Size(201, 93);
             this.btnRetour.TabIndex = 29;
-            this.btnRetour.Text = ">";
+            this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
@@ -344,20 +388,29 @@ namespace Mediatek86.Vue
             // 
             this.bdgPersonnel.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.bdgPersonnelCompleteenvent);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.lblTitre);
+            this.panel1.Controls.Add(this.btnRetour);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1528, 93);
+            this.panel1.TabIndex = 30;
+            // 
             // FrmPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(833, 483);
-            this.Controls.Add(this.btnRetour);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(1482, 1055);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtgPersonnel);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnAbsPersonnel);
             this.Controls.Add(this.grpAjouterPersonnel);
             this.Controls.Add(this.btnAjoutPersonnel);
             this.Controls.Add(this.grpaffichecontact);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.PicIcone);
             this.Name = "FrmPersonnel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -370,8 +423,9 @@ namespace Mediatek86.Vue
             this.grpAjouterPersonnel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonnel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgPersonnel)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -384,7 +438,7 @@ namespace Mediatek86.Vue
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnModifFiche;
         private System.Windows.Forms.Button btnSupprimerFiche;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.GroupBox grpaffichecontact;
         private System.Windows.Forms.TextBox txtprenom;
         private System.Windows.Forms.TextBox txtnom;
@@ -399,11 +453,15 @@ namespace Mediatek86.Vue
         private System.Windows.Forms.Button btnValidAjout;
         private System.Windows.Forms.GroupBox grpAjouterPersonnel;
         private System.Windows.Forms.Button btnAjoutPersonnel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnAbsPersonnel;
         private System.Windows.Forms.Button button3;
-        public  System.Windows.Forms.DataGridView dtgPersonnel;
+        /// <summary>
+        /// dtgpersonnel
+        /// </summary>
+        public System.Windows.Forms.DataGridView dtgPersonnel;
         private System.Windows.Forms.Button btnValidModif;
         private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.BindingSource bdgPersonnel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

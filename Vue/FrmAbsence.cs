@@ -16,22 +16,30 @@ using Mediatek86.Dal;
 namespace Mediatek86.Vue
 {
     public partial class FrmAbsence : Form
-    { ///Remplir methode au moment de creer les methodes associé cas utilisation AJOUTERABSENCE()
+    { 
+        
+        /// <summary>
+        /// personnelgere sera un objet personnel  dont on va gerer les absences et fait réference à l'objet de la frmPersonnel = personnel selectionné
+        /// </summary>
         public static Personnel personnelgere = FrmPersonnel.personnelAbs;
-        /// liste des absence d'un personnel de la frmAbsence qui recoit celle AccesDonnes.Liste1PersonlelAbsence(personnelgere)
+        /// <summary>
+        ///   /// liste des absence d'un personnel de la frmAbsence 
+        /// </summary>
         public static List<Absence> listeabsdupersonnel = AccesDonnes.Liste1PersonlelAbsence(personnelgere);
         /// <summary>
         /// Objet pour gérer la liste des motifs
         /// </summary>
         BindingSource bdgcbxmotifs = new BindingSource();
-        public void AjoutAbsence()
-        {
-          
-        }
 
+
+        List<Motif> lesMotifs = Controleur.ListeMotif();
+
+        /// <summary>
+        /// Mettre à jour le Datagrid absence à chaque fin d'operation type ajouter, modifier, supprimmer
+        /// </summary>
         public void MajAjoutAbsence ()
         {
-            bdgAbsence.ResetBindings(true);
+            //bdgAbsence.ResetBindings(true);
             bdgAbsence.DataSource = listeabsdupersonnel;
             dtgAbsence.DataSource = bdgAbsence;
 
@@ -42,9 +50,7 @@ namespace Mediatek86.Vue
             dtgAbsence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgAbsence.ReadOnly = true;
         }
-        /// <summary>
-        /// La liste de la frmabsence qui equivaut à liste acces donnes qui retourne les absence d'un personnnel en parametre
-        /// </summary>
+        
        
 
         /// <summary>
@@ -53,94 +59,76 @@ namespace Mediatek86.Vue
         public void RemplirListeAbsence()
         {
            Personnel personnelgere = FrmPersonnel.personnelAbs;
-            bdgAbsence.DataSource = Controleur.AfficherdtgAbsence(personnelgere);
+
+
+            bdgAbsence.DataSource = Controleur.AbsencesDuPersonnel(personnelgere);
             dtgAbsence.DataSource = bdgAbsence;
             dtgAbsence.Columns[0].Visible = false;
-
             dtgAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtgAbsence.MultiSelect = false;
             dtgAbsence.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgAbsence.ReadOnly = true;
 
-            //// bdg du cbxmotifs
-
-            List<Motif> lesMotifs = Motif.GetMotifs();
             bdgcbxmotifs.DataSource = lesMotifs;
             cbxMotifAbsence.DataSource = bdgcbxmotifs;
           //  if (cbxMotifAbsence.Items.Count > 0)
            // {
              //   cbxMotifAbsence.SelectedIndex = 0;
-           // }
-            //foreach (DataGridViewRow row in dtgAbsence.Rows)
-            //{
-            //    if (row.Cells[1].Value != personnelgere)
-
-            //    {
-            //        row.Visible = false;
-            //        DataGridViewBand band = row;
-            //        band.Visible = false;
-            //        CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dtgAbsence.DataSource];
-
-            //        currencyManager1.SuspendBinding();
-            //        row.Visible = false;
-            //    }
-            //    else
-            //    {
-            //        row.Visible = true;
-            //    }
-            //}
-           
-            //Afficher seulement les lignes qui correspond aux absence du personnel selectionner 
+          
 
            
 
         }
+        /// <summary>
+        /// Redimensionner un datagridview (en cours)
+        /// </summary>
+        /// <param name="DataGridView1"> dtg d'un form</param>
+        /// <param name="num">taille largeur colonne en pixels</param>
+        protected static void prodatagridview( DataGridView DataGridView1 , int num)
+        {
 
+            DataGridView1.Columns[0].FillWeight = num;// The id column 
+            DataGridView1.Columns[1].FillWeight = num;// The abbrevation columln
+            DataGridView1.Columns[2].FillWeight = num;// The id column 
+            DataGridView1.Columns[3].FillWeight=  num;// The abbrevation columln
+            DataGridView1.Columns[4].FillWeight= num;// The id column 
+            //DataGridView1.Columns[1].Width = 200;// The abbrevation columln
+            // DataGridView1.Columns[0].Width = 100;// The id column 
+            //DataGridView1.Columns[1].Width = 200;// The abbrevation columln
+        }
 
-
-        //Pour pouvoir mettre la visisibilité d'une ligne en  faux
-
-
-        //        foreach (DataGridViewRow row in dtgAbsence.Rows)
-        //{
-        //    if (row.Cells[1].Value.ToString().Contains(personnelgere.Idpersonnel.ToString()))
-
-        //    dtgAbsence.row .Visible = false;
-        // MessageBox.Show(row.Cells[1].Value.ToString());
-        //nt k = dataGridView1.SelectedRows[0].Index;
-        //dataGridView1.CurrentCell = null;
-
-
-        //if (row.Cells[1].Value.ToString().Contains(personnelgere.Idpersonnel.ToString()))
-        //{
-        //    CurrencyManager currencyManager1 = (CurrencyManager)dtgAbsence.BindingContext[dtgAbsence.DataSource];
-        //    currencyManager1.SuspendBinding();
-        //    row.Visible = false;
-        //    currencyManager1.ResumeBinding();
-        //}
 
       
         
-
+        /// <summary>
+        /// Constructeur de la Frmabsence
+        /// </summary>
         public FrmAbsence()
         {
             InitializeComponent();
             RemplirListeAbsence();
+            // prodatagridview(dtgAbsence , 200);
+            dtgAbsence.AutoResizeColumn(0);
+            dtgAbsence.AutoResizeColumn(1);
+            dtgAbsence.AutoResizeColumn(2);
+            dtgAbsence.AutoResizeColumn(3);
+            dtgAbsence.AutoResizeColumn(4);
+            dtgAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+
+
+
             // Afficher un petit recap du profil du personnel dont on va gérer l'absence
             lblNomPrenom.Text = FrmPersonnel.personnelAbs.ToString();
-            lblfonction.Text = " ( " + FrmPersonnel.personnelAbs.Nomservice.ToString() + " ) ";
-            //Remplir les combobox
-
-           
-
-            //cbxMotifAbsence.Items.Add((string)Motif.Motif1Vacances.Libelle);
-            //cbxMotifAbsence.Items.Add((string)Motif.Moti2fMaladie.Libelle);
-            //cbxMotifAbsence.Items.Add((string)Motif.Motif3Familiale.Libelle);
-            //cbxMotifAbsence.Items.Add((string)Motif.Motif4CongeParental.Libelle);
-
+            lblfonction.Text = " ( " + FrmPersonnel.personnelAbs.Nomservice.ToString() + " ) ";     
 
         }
-
+        /// <summary>
+        /// Rends visible absence
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
         private void lstabsence_MouseClick(object sender, MouseEventArgs e)
         {
             grpAjoutAbsence.Visible = true;
@@ -158,8 +146,8 @@ namespace Mediatek86.Vue
         /// <summary>
         /// Ajout d'une ebsence , commentaire = dtg se mets à ajour après click et non directement après l'ajout
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
         private void button2_Click(object sender, EventArgs e)
         {
         //    MessageBox.Show("Voulez vous confirmer cet ajout d'absence ?", "Confirmation", MessageBoxButtons.YesNoCancel , MessageBoxIcon.Warning);
@@ -205,13 +193,13 @@ namespace Mediatek86.Vue
                 
         //        AccesDonnes.GetLesAbsences().Add(absence);
         //        listeabsdupersonnel.Add(absence);
-        //        Controleur.AfficherdtgAbsence(personnelgere).Add(absence);
+        //        Controleur.AbsencesDuPersonnel(personnelgere).Add(absence);
               
                 
         //        // AccesDonnes.InsertAbsence(personnelgere, absence);
 
         //        MajAjoutAbsence();
-        //        //foreach ( Absence item in Controleur.AfficherdtgAbsence(personnelgere))
+        //        //foreach ( Absence item in Controleur.AbsencesDuPersonnel(personnelgere))
         //        //{
         //        //    MessageBox.Show(item.ToString());
         //        //}
@@ -239,8 +227,8 @@ namespace Mediatek86.Vue
         /// Remets le  bon
         ///format à l'heure que il y a une saisie de l'heure
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
         private void DatepDatedebut_ValueChanged(object sender, EventArgs e)
         {
             DatepDatedebut.Format = DateTimePickerFormat.Custom;
@@ -251,7 +239,12 @@ namespace Mediatek86.Vue
         {
 
         }
-
+        /// <summary>
+        /// Remets le  bon
+        ///format à l'heure que il y a une saisie de l'heure
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             DatepDateFin.Format = DateTimePickerFormat.Custom;
@@ -288,8 +281,12 @@ namespace Mediatek86.Vue
         {
             MessageBox.Show("Voulez vous confirmer ce choix ?", "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop);
         }
-
-        private void btnRetour_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Retour sur sur la FrmPersonnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRetourFrmPersonnel_Click(object sender, EventArgs e)
         {
            FrmPersonnel frmPersonnel = new FrmPersonnel();
             frmPersonnel.Show();
@@ -328,7 +325,9 @@ namespace Mediatek86.Vue
 
         private void btnValidAjout_Click(object sender, EventArgs e)
         {
-
+            ////  A FAIRE = classses motif fait
+            ////string libelle = cbxMotifAbsence.SelectedItem.ToString();
+            ////libelle = uneabsence.Libelle;
         }
 
         private void btnModifierAbs_Click_1(object sender, EventArgs e)
@@ -336,16 +335,14 @@ namespace Mediatek86.Vue
             if (dtgAbsence.SelectedRows.Count > 0)
             {
                 grpAjoutAbsence.Visible = true;
-                btnModifierAbs.Visible = true;
+                btnValidModif.Visible = true;
                 btnAjouterAbs.Visible = false;
 
                 Absence uneabsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
                 DatepDatedebut.Value = uneabsence.Datedebut;
                 DatepDateFin.Value = uneabsence.Datefin;
                 cbxMotifAbsence.SelectedIndex = cbxMotifAbsence.FindStringExact(uneabsence.Libelle);
-                ////  A FAIRE = classses motif fait
-                ////string libelle = cbxMotifAbsence.SelectedItem.ToString();
-                ////libelle = uneabsence.Libelle;
+               
 
             }
             else
@@ -354,33 +351,75 @@ namespace Mediatek86.Vue
         
         
         }
-
+        /// <summary>
+        /// Enrengistre la modifation d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnValidModif_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Voulez vous confirmer cette modification","Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
+                if (cbxMotifAbsence.SelectedIndex != -1 && !DatepDatedebut.Value.ToString().Equals("") && !DatepDateFin.Value.ToString().Equals(""))
+                {
+                    if (DatepDatedebut.Value < DatepDateFin.Value)
 
-                Absence uneabsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
-                
-                uneabsence.Datedebut = DatepDatedebut.Value;
-                uneabsence.Datefin = DatepDateFin.Value;
-                Motif motifabs = (Motif)bdgcbxmotifs.List[bdgcbxmotifs.Position];
-                int idmotif = motifabs.Idmotif;
-                string libelle = motifabs.Libelle;
-              
-                uneabsence.Idmotif = idmotif;
-               uneabsence.Libelle = libelle;
-                MessageBox.Show(uneabsence.ToString() + " " + motifabs.Idmotif );
+                    {
+                        Absence uneabsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
 
-                AccesDonnes.UpdateAbsence(personnelgere, uneabsence);
+                        uneabsence.Datedebut = DatepDatedebut.Value;
+                        uneabsence.Datefin = DatepDateFin.Value;
+                        Motif motifabs = (Motif)bdgcbxmotifs.List[bdgcbxmotifs.Position];
+                        int idmotif = motifabs.Idmotif;
+                        string libelle = motifabs.Libelle;
+
+                        uneabsence.Idmotif = idmotif;
+                        uneabsence.Libelle = libelle;
+                        //MessageBox.Show(uneabsence.ToString() + " " + motifabs.Idmotif);
+                        Controleur.UpdateAbs(personnelgere, uneabsence);
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("La date de début de l'absence est plus récente que la date de fin", "Erreur saisie");
+                    }
 
 
 
-                // Mise à des lbl après modif et visisilité de grp
 
-                string dulabel = "Absence du " + uneabsence.Datedebut.ToString();
-                lbltitreabsence.Text = dulabel;
+
+                }
+
+                else
+                {
+
+                    MessageBox.Show("Des champs sont manquants");
+                }
+
                 grpAjoutAbsence.Visible = false;
+                
+                //     Absence uneabsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
+
+                // uneabsence.Datedebut = DatepDatedebut.Value;
+                // uneabsence.Datefin = DatepDateFin.Value;
+                // Motif motifabs = (Motif)bdgcbxmotifs.List[bdgcbxmotifs.Position];
+                // int idmotif = motifabs.Idmotif;
+                // string libelle = motifabs.Libelle;
+
+                // uneabsence.Idmotif = idmotif;
+                //uneabsence.Libelle = libelle;
+                // MessageBox.Show(uneabsence.ToString() + " " + motifabs.Idmotif );
+
+                // AccesDonnes.UpdateAbsence(personnelgere, uneabsence);
+
+
+
+                // // Mise à des lbl après modif et visisilité de grp
+
+                // string dulabel = "Absence du " + uneabsence.Datedebut.ToString();
+                // lbltitreabsence.Text = dulabel;
+                // grpAjoutAbsence.Visible = false;
 
 
 
@@ -388,11 +427,17 @@ namespace Mediatek86.Vue
 
 
             }
+            else
+            {
+                grpAjoutAbsence.Visible = false;
+                btnValidAjoutAbs.Visible = false;
 
-            
-           // listeabsdupersonnel.
+            }
 
-            
+
+            // listeabsdupersonnel.
+
+
         }
 
       
@@ -423,7 +468,11 @@ namespace Mediatek86.Vue
                
             
         }
-
+        /// <summary>
+        /// Effacer la selection 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bdgAbsence_BindingComplete(object sender, BindingCompleteEventArgs e)
         {
            dtgAbsence.ClearSelection();
@@ -441,7 +490,7 @@ namespace Mediatek86.Vue
         {
             Absence uneabsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
             if (dtgAbsence.SelectedRows.Count> 0  &&
-                MessageBox.Show("Voulez vous confirmer la supression de l'absence du"+uneabsence.Idabsence.ToString(), "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes )
+                MessageBox.Show("Voulez vous confirmer la supression de l'absence du "+uneabsence.Datedebut.ToString(), "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes )
             {
                 dtgAbsence.Visible = false;
 
@@ -465,7 +514,7 @@ namespace Mediatek86.Vue
 
                 MessageBox.Show("Absence supprimé");
 
-                bdgAbsence.ResetBindings(true);
+               // bdgAbsence.ResetBindings(true);
                 bdgAbsence.DataSource = listeabsdupersonnel;
 
                 dtgAbsence.DataSource = bdgAbsence;
@@ -488,14 +537,18 @@ namespace Mediatek86.Vue
         
         
         }
-
+        /// <summary>
+        /// Affiche le formulaire pour ajouter une absence d'unpersonnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnajouterabs_Click(object sender, EventArgs e)
         {
-            /// visiblité du grp et du bonton valider ajout
+            // visiblité du grp et du bonton valider ajout
             grpAjoutAbsence.Visible = true;
             btnValidAjoutAbs.Visible = true;
             btnValidModif.Visible = false;
-            /// Pour qu'il n'ai pas de date afficher au moment d'ajouter la date
+            // Pour qu'il n'ai pas de date afficher au moment d'ajouter la date
             DatepDatedebut.Format = DateTimePickerFormat.Custom;
             DatepDatedebut.CustomFormat = " ";
 
@@ -503,7 +556,11 @@ namespace Mediatek86.Vue
             DatepDateFin.CustomFormat = " ";
 
         }
-
+        /// <summary>
+        /// Enrengistre l'ajout d'une absence d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnValidAjoutAbsence_Click(object sender, EventArgs e)
         {
            
@@ -524,10 +581,10 @@ namespace Mediatek86.Vue
 
                    
                         Absence absence = new Absence(idabsence, personnelgere, DatepDatedebut.Value, idmotif, libelle, DatepDateFin.Value);
-                        MessageBox.Show(absence.ToString() + " " + motifabs.Libelle + " personnel id"+absence.Unpersonnel.Idpersonnel);
-                        ///Controller 
-                        AccesDonnes.InsertAbsence(personnelgere, absence);
-                        MessageBox.Show("L'absence a bien été ajouté");
+                      //  MessageBox.Show(absence.ToString() + " " + motifabs.Libelle + " personnel id"+absence.Unpersonnel.Idpersonnel);
+                        //Controller 
+                       Controleur.InsertAbs(personnelgere, absence);
+                        MessageBox.Show("L'absence du " +absence.Datedebut +" a bien été ajouté .");
 
 
                         bdgAbsence.ResetBindings(true);
@@ -541,11 +598,6 @@ namespace Mediatek86.Vue
                     {
                         MessageBox.Show("La date de début de l'absence est plus récente que la date de fin", "Erreur saisie");
                     }
-
-
-
-
-
 
 
                 }
@@ -571,6 +623,11 @@ namespace Mediatek86.Vue
 
             grpAjoutAbsence.Visible = false;
             btnValidAjoutAbs.Visible = false;
-        } 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

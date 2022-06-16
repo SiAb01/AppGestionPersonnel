@@ -16,7 +16,9 @@ using Mediatek86.Dal;
 namespace Mediatek86.Vue 
 {
     public partial class FrmAuthentification : Form
-    { 
+    { /// <summary>
+    /// Constructeur fomr authentification
+    /// </summary>
         public FrmAuthentification()
         {
             InitializeComponent();
@@ -99,41 +101,43 @@ namespace Mediatek86.Vue
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Btn_Connection_Click(object sender, EventArgs e)
-        { 
-              ////  A REACTIVER a LA FIN EN COMMENTAIRE POUR EVITER LA SAISIE MDP PENDANT TEST ////
-            ////if (!txtlogin.Text.Equals("") &&  !txtmotdepasse.Text.Equals(""))
-            ////{
-            ////    if (!AccesDonnes.ControleAuthentification(txtlogin.Text , txtmotdepasse.Text))
-            ////    {
-            ////        MessageBox.Show("Authentification incorrecte ou vous n'êtes pas admin", "Alerte");
-            ////        txtlogin.Text = "";
-            ////        txtmotdepasse.Text = "";
-                    
-            ////        txtlogin.Focus();
-            ////    }
-            ////    else
-            ////    {
-            ////        MessageBox.Show("Connection");
-            ////        ///Faire en sorte que l'utilisation soit lié à  cette authentification
-            ////        Responsable responsableuser = new Responsable((string)txtlogin.Text, (string) txtmotdepasse.Text);
-                    FrmPersonnel   frmpersonnel = new FrmPersonnel();
+        {
+           
+            if (!txtlogin.Text.Equals("") && !txtmotdepasse.Text.Equals(""))
+            {
+                if (!AccesDonnes.ControleAuthentification(txtlogin.Text, txtmotdepasse.Text))
+                {
+                    MessageBox.Show("Authentification incorrecte ou vous n'êtes pas admin", "Alerte");
+                    txtlogin.Text = "";
+                    txtmotdepasse.Text = "";
+
+                    txtlogin.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Connection reussie" ,"Information");
+                    //Faire en sorte que l'utilisation soit lié à  cette authentification
+                    Responsable responsableuser = new Responsable((string)txtlogin.Text, (string)txtmotdepasse.Text);
+                    FrmPersonnel frmpersonnel = new FrmPersonnel();
                     frmpersonnel.Show();
                     this.Hide();
-            ////  A REACTIVER a LA FIN EN COMMENTAIRE POUR EVITER LA SAISIE MDP PENDANT TEST ////
 
 
-            ////    }
+
+                }
 
 
-            ////}
-            ////else
-            ////{
-            ////    MessageBox.Show("Tous les champs doivent être remplis.", "Information");
-            ////}
+            }
+            else
+            {
+                MessageBox.Show("Tous les champs doivent être remplis.", "Information");
+            }
 
-            ////  A REACTIVER a LA FIN EN COMMENTAIRE POUR EVITER LA SAISIE MDP PENDANT TEST ////
+
 
         }
+
+
         /// <summary>
         /// Pour ne pas afficher le mot de passe en clair lors de la saisie
         /// </summary>
@@ -142,6 +146,11 @@ namespace Mediatek86.Vue
         private void txtmotdepasse_ModifiedChanged(object sender, EventArgs e)
         {
             txtmotdepasse.PasswordChar = '*';
+        }
+
+        private void lbllogo2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 } 

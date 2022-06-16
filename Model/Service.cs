@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Mediatek86.Dal;
 using Mediatek86.Connexion;
 
-namespace Mediatek86.Model
-{/// <summary>
- /// classe metier source table service base de données
- /// </summary
+ namespace Mediatek86.Model
+{
+    /// <summary>
+    /// Classe métier Service qui a des membres qui sont des instance de classe qui correspond au service déja crée dans la bdd
+    /// </summary>
     public class Service
     {
        private int idservice;
@@ -25,20 +26,39 @@ namespace Mediatek86.Model
 
        
 
-
-
+/// <summary>
+/// Constructeur de service
+/// </summary>
+/// <param name="idservice">id service </param>
+/// <param name="nom"> nom du service</param>
         public Service(int idservice , string nom)
         {
             this.idservice = idservice;
             this.nom = nom;
         }
         // valorisations des proprietés
+        /// <summary>
+        /// valorise 
+        /// </summary>
         public int Idservice { get => idservice; set => idservice = value; }
+        /// <summary>
+        /// valorise 
+        /// </summary>
         public string Nom { get => nom; set => nom = value; }
 
-        ///Valorisations des instances 
+      /// <summary>
+      /// Valorise une instanciation d'un Service
+      /// </summary>
         public static Service Service1Administratif { get => serviceAdministratif; set => serviceAdministratif = value; }
+
+        /// <summary>
+        /// Valorise une instanciation d'un Service
+        /// </summary>
         public static Service Service2MediationCult { get => serviceMediationCult; set => serviceMediationCult = value; }
+
+        /// <summary>
+        /// Valorise une instanciation d'un Service
+        /// </summary>
         public static Service Service3Pret { get => servicePret; set => servicePret = value; }
 
         /// <summary>
@@ -66,18 +86,9 @@ namespace Mediatek86.Model
 
 
 
-        /// <summary>
-        /// Méthode temporaire qui deviendra un constructeur privé qui imposera que ces 4 instances de classe
-        /// </summary>
-        /// <returns> les 4 instances de Service</returns>
+    
 
-        //public static void ServiceInstance()
-        //{
-        //    Service serviceAdministratif = new Service(1, "administratif");
-        //    Service serviceMediationCult = new Service(2, "médiation culturelle");
-        //    Service servicePret new Service(2, "médiation culturelle");
-
-        //}
+       
     }
 
 

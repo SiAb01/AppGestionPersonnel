@@ -10,9 +10,20 @@ using MySql.Data.MySqlClient;
 using System.Globalization;
 
 namespace Mediatek86.Dal
-{ /// <summary>
-  /// Classe regroupant requetes permettant d'accèder aux données provenant de base de données
-  /// </summary>
+
+
+{
+
+    //  
+    //The<see cref="Mediatek86.Dal"/> Classe regroupant requetes permettant d'accèder aux données provenant de base de données
+    // 
+    //  [System.Runtime.CompilerServices.CompilerGenerated]
+
+
+
+    /// <summary>
+    ///  Classe regroupant requetes permettant d'accèder aux données provenant de base de données
+    /// </summary>
     public class AccesDonnes
     {
         /// <summary>
@@ -22,25 +33,33 @@ namespace Mediatek86.Dal
 
 
         /// <summary>
-        ///  Methodes  des requetes pour recupérer les données de la base de données necessaire à l'app
+        ///  LES PERSONNELS 
         /// </summary>
+
+
+
+
+
 
 
         /// <summary>
         /// Récupère les données de la table personnel pour le mettre dans la classe personnel
+        /// On récupere les valeurs de chaque colonne concernée dans la requete pour les transferer dans un instance un classe Personnel , valeur  d'1 colonne = propriété de l'obje
+        /// liste des profils
         /// </summary>
-        /// <returns>liste des profils</returns>
+
         /// 
+
+
+
+
+        ///
         public static List<Personnel> GetLesPersonnels()
-
-
-
 
 
         {
 
 
-            //Service servicepersonnel = new Service(0, "libelle");
             List<Personnel> lespersonnels = new List<Personnel>();
             MySqlConnection connectionnbdd = new MySqlConnection(AccesDonnes.connectionString);
             connectionnbdd.Open();
@@ -50,24 +69,14 @@ namespace Mediatek86.Dal
 
 
             MySqlCommand macommande = new MySqlCommand(req, connectionnbdd);
-            // string nomservice = "";
-            // string idperson = unpersonnel.Idpersonnel.ToString();
-            // int intidepersoonne = unpersonnel.Idpersonnel;
-
-
-
-
-            //macommande.Parameters.Add(new MySqlParameter("@idunpersonnel", idperson));
-            // macommande.Prepare();
             MySqlDataReader reader = macommande.ExecuteReader();
 
+
             while (reader.Read())
-            {
-                //  servicepersonnel.Idservice =(int) reader.GetValue(4);
-                // servicepersonnel.Nom = (string)reader.GetValue(3);
+            {   
                 Personnel personnel = new Personnel
                  (
-                 (int)reader.GetValue(0), (string)reader.GetValue(1), (string)reader.GetValue(2), (string)reader.GetValue(3) /*servicepersonnel*/,
+                 (int)reader.GetValue(0), (string)reader.GetValue(1), (string)reader.GetValue(2), (string)reader.GetValue(3) ,(int)reader.GetValue(4)/*servicepersonnel*/,
                  (string)reader.GetValue(5), (string)reader.GetValue(6)
                  );
                 lespersonnels.Add(personnel);
@@ -78,263 +87,18 @@ namespace Mediatek86.Dal
             reader.Close();
 
             return lespersonnels;
-
-
-
-
-
-
-
-
-
-
-            //Service servicedupersonnel = new Service(0, "nom");
-            //List<Personnel> lesPersonnels = new List<Personnel>();
-            //// string req = "select * from Personnel order by nom;";
-            //string req =
-            //    "SELECT personnel.IDPERSONNEL,personnel.NOM, personnel.PRENOM ,  service.NOMSERVICE ,personnel.TEL, personnel.MAIL FROM personnel INNER JOIN service ON personnel.IDSERVICE = service.IDSERVICE ORDER BY personnel.IDPERSONNEL ";
-
-            //Singleton curs = Singleton.GetInstance(AccesDonnes.connectionString);
-            //curs.ReqSelect(req, null);
-            //while (curs.Read())
-
-            //{   /// Recuper l'objet service grace à la valeur nommotif récupére dans la requete
-            //    string nomservice = (string)curs.Field(3);
-            //    /////L'objet nouvellement déclaré  motifabs fera une réference à l'un des objets membres statiques de la classes Motif selon la valeur obtenu dans le champs idmotif
-            //    switch (nomservice)
-            //    {
-            //        case "administratif":
-            //            servicedupersonnel.Idservice = 1;
-            //            //Service.Service1Administratif.Idservice; 
-            //            servicedupersonnel.Nom = "administratif";
-            //            // Service.Service1Administratif.Nom;
-
-
-            //            break;
-            //        case "médiation culturelle":
-            //            servicedupersonnel.Idservice = 2;
-
-            //            // Service.Service2MediationCult.Idservice.;
-            //            servicedupersonnel.Nom = "médiation culturelle";
-            //            //Service.Service2MediationCult.Nom;
-
-            //            break;
-
-            //        case "pret":
-            //            servicedupersonnel.Idservice = 3;
-            //            //Service.Service3Pret.Idservice;
-            //            servicedupersonnel.Nom = "pret";
-            //            //Service.Service3Pret.Nom;
-
-
-            //            break;
-
-            //    }
-
-
-            //    /// Personnel personnel = new Personnel ((int)curs.Field("idpersonnel"), (string)curs.Field("nom") , (string)curs.Field("prenom"),
-            //    ///* (string)curs.Field("nomservice")*/, (string)curs.Field("tel"), (string)curs.Field("mail"));
-            //    Personnel personnel = new Personnel
-            // (
-            // (int)curs.Field(0), (string)curs.Field(1), (string)curs.Field(2), servicedupersonnel,
-            // (string)curs.Field(4), (string)curs.Field(5)
-            // );
-            //    lesPersonnels.Add(personnel);
-            //}
-            //curs.Close();
-            //return lesPersonnels;
-
-            //Service servicedupersonnel = new Service(0, "nom");
-            //List<Personnel> lesPersonnels = new List<Personnel>();
-            //string nomservice = "";
-            //string req = "select * from Personnel order by nom;";
-            //string req =
-            //    "SELECT personnel.IDPERSONNEL,personnel.NOM, personnel.PRENOM ,  service.NOMSERVICE ,personnel.TEL, personnel.MAIL FROM personnel INNER JOIN service ON personnel.IDSERVICE = service.IDSERVICE ORDER BY personnel.IDPERSONNEL ";
-
-            //Singleton curs = Singleton.GetInstance(AccesDonnes.connectionString);
-            //curs.ReqSelect(req, null);
-            //while (curs.Read())
-
-            //{   /// Recuper l'objet service grace à la valeur nommotif récupére dans la requete
-            //    nomservice = (string)curs.Field(3);
-
-            //    / Teste de la valeur de nom service
-            //    / Console.WriteLine("nomservice avant switch " + nomservice);
-
-
-
-
-            //    ///L'objet nouvellement déclaré  motifabs fera une réference à l'un des objets membres statiques de la classes Motif selon la valeur obtenu dans le champs idmotif
-            //    switch (nomservice)
-            //    {
-            //        case "administratif":
-            //            servicedupersonnel.Idservice = 1;
-            //            //Service.Service1Administratif.Idservice; 
-            //            servicedupersonnel.Nom = "administratif";
-            //            // Service.Service1Administratif.Nom;
-
-
-            //            break;
-            //        case "médiation culturelle":
-            //            servicedupersonnel.Idservice = 2;
-
-            //            // Service.Service2MediationCult.Idservice.;
-            //            servicedupersonnel.Nom = "médiation culturelle";
-            //            //Service.Service2MediationCult.Nom;
-
-            //            break;
-
-            //        case "pret":
-            //            servicedupersonnel.Idservice = 3;
-            //            //Service.Service3Pret.Idservice;
-            //            servicedupersonnel.Nom = "pret";
-            //            //Service.Service3Pret.Nom;
-
-
-            //            break;
-
-            //    }
-            //    servicedupersonnel.Nom = nomservice;
-
-            //    Personnel personnel = new Personnel
-            //     (
-            //     (int)curs.Field(0), (string)curs.Field(1), (string)curs.Field(2), servicedupersonnel,
-            //     (string)curs.Field(4), (string)curs.Field(5)
-            //     );
-            //    lesPersonnels.Add(personnel);
-
-
-            //   Service servicedupersonnel = new Service(0, "nom");
-            //List<Personnel> lesPersonnels = new List<Personnel>();
-            //Personnel personnel;
-            //// string req = "select * from Personnel order by nom;";
-            //string req =
-            //    "SELECT personnel.IDPERSONNEL,personnel.NOM, personnel.PRENOM ,  service.NOMSERVICE ,personnel.TEL, personnel.MAIL FROM personnel INNER JOIN service ON personnel.IDSERVICE = service.IDSERVICE ORDER BY personnel.IDPERSONNEL ";
-
-            //Singleton curs = Singleton.GetInstance(AccesDonnes.connectionString);
-            //curs.ReqSelect(req, null);
-            //while (curs.Read())
-
-            //{   /// Recuper l'objet service grace à la valeur nommotif récupére dans la requete
-            //    string nomservice = (string)curs.Field(3);
-
-            //    ///Teste de la valeur de nom service 
-            //  ///  Console.WriteLine("nomservice avant switch "+ nomservice);
-
-
-
-
-            //    /////L'objet nouvellement déclaré  motifabs fera une réference à l'un des objets membres statiques de la classes Motif selon la valeur obtenu dans le champs idmotif
-            //    switch (nomservice)
-            //    {
-            //        case "administratif":
-            //            servicedupersonnel.Idservice = 1;
-            //            //Service.Service1Administratif.Idservice; 
-            //            servicedupersonnel.Nom = "administratif";
-            //            // Service.Service1Administratif.Nom;
-
-            //            ///////////// Création objet ///////////////
-            //            lesPersonnels.Add(new Personnel
-            //           (
-            //            (int)curs.Field(0), (string)curs.Field(1), (string)curs.Field(2), servicedupersonnel,
-            //            (string)curs.Field(4), (string)curs.Field(5)
-            //             ));
-            //            //////////////   Ajout liste ////////////
-
-
-            //            break;
-            //        case "médiation culturelle":
-            //            servicedupersonnel.Idservice = 2;
-
-            //            // Service.Service2MediationCult.Idservice.;
-            //            servicedupersonnel.Nom = "médiation culturelle";
-            //            //Service.Service2MediationCult.Nom;
-
-            //            ///////////// Création objet ///////////////
-            //            lesPersonnels.Add(new Personnel
-            //           (
-            //            (int)curs.Field(0), (string)curs.Field(1), (string)curs.Field(2), servicedupersonnel,
-            //            (string)curs.Field(4), (string)curs.Field(5)
-            //             ));
-            //            //////////////   Ajout liste ////////////
-
-            //            break;
-
-            //        case "pret":
-            //            servicedupersonnel.Idservice = 3;
-            //            //Service.Service3Pret.Idservice;
-            //            servicedupersonnel.Nom = "pret";
-            //            //Service.Service3Pret.Nom;
-
-            //            ///////////// Création objet ///////////////
-            //            lesPersonnels.Add(new Personnel
-            //           (
-            //            (int)curs.Field(0), (string)curs.Field(1), (string)curs.Field(2), servicedupersonnel,
-            //            (string)curs.Field(4), (string)curs.Field(5)
-            //             ));
-            //            //////////////   Ajout liste ////////////
-
-            //            break;
-
-            //    }
-
-
-            //}
-            //curs.Close();
-            //return lesPersonnels;
-
+         
 
         }
 
 
-        //public static Motif GetServicePersonnel(Singleton reader, Service servicepersonnel)
-
-
-
-        //{  
-        //    string nomservice = (string)reader.GetValue(3);
-        //    /////L'objet nouvellement déclaré  motifabs fera une réference à l'un des objets membres statiques de la classes Motif selon la valeur obtenu dans le champs idmotif
-        //    switch (nomservice)
-        //    {
-        //        case "administratif":
-        //            servicepersonnel.Idservice = Service.ServiceAdministratif.Idservice ;
-        //            servicepersonnel.Nom =Service.ServiceAdministratif.Nom ;
-
-
-        //            break;
-        //        case "médiation culturelle":
-        //            servicepersonnel.Idservice = Service.ServiceAdministratif.Idservice;
-        //            servicepersonnel.Nom = Service.ServiceAdministratif.Nom;
-
-        //            break;
-        //        case "pret":
-        //            servicepersonnel.Idservice = Service.ServiceAdministratif.Idservice;
-        //            servicepersonnel.Nom = Service.ServiceAdministratif.Nom;
-
-
-        //            break;
-
-        //    }
-        //    return servicepersonnel;
-
-        //}
-
         /// <summary>
-        /// Récupère les données de la table personnel pour inserer dans la DataGridView Personnel
+        /// Requete préparé sql Insert qui ajoute un personnel
         /// </summary>
-        /// <returns> nom, prénom, tel, mail, nomservice </returns>
-
-        ///  public static List<Personnel> GetListePersonneldtg()
-        ///  {
-
-        // }
-
-
-
-        
-        
+        /// <param name="personnel"> personnel</param>
+        /// <param name="idservice"> idservice</param>
         public static void AjoutPersonnel(Personnel personnel, int idservice)
-        { int ideservice = 0;
+        { 
             string req = "INSERT INTO `personnel`( `IDSERVICE`, `NOM`, `PRENOM`, `TEL`, `MAIL`) ";
             req += "values (@idservice, @nom, @prenom, @tel, @mail);";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -342,59 +106,27 @@ namespace Mediatek86.Dal
             parameters.Add("@prenom", personnel.Prenom);
             parameters.Add("@tel", personnel.Tel);
             parameters.Add("@mail", personnel.Mail);
-
-            //switch (personnel.Nomservice)
-            //{
-            //    case "administratif":
-            //        ideservice = Service.Service1Administratif.Idservice;
-            //        break;
-
-            //    case "médiation culturelle":
-            //        ideservice = Service.Service2MediationCult.Idservice;
-            //        break;
-            //    case "pret":
-            //        ideservice = Service.Service3Pret.Idservice;
-            //        break;
-
-
-            //}
-            parameters.Add("@idservice", ideservice);
+            parameters.Add("@idservice", idservice);
             Singleton connection = Singleton.GetInstance(connectionString);
             connection.ReqUpdate(req, parameters);
         }
 
-        /// <summary>
-        /// Mets à jour le personnel sélectionné dans la base de données
-        /// </summary>
-        /// <param name="personnel"></param>
+       /// <summary>
+       /// Requete préparée type update sql qui va modifier un personnel
+       /// </summary>
+       /// <param name="personnel"> personnel</param>
+       /// <param name="ideservice">idservice</param>
         public static void MajduPersonnel(Personnel personnel, int ideservice)
         {
-            // int ideservice = 0;
+            
             string req =
-                " update personnel set `IDSERVICE` = @idservice, `NOM` = @nom, `PRENOM`=@prenom , `TEL` = @tel, `MAIL` = @mail  where `IDPERSONNEL` = @idpersonnel; ";
+                " update personnel set `IDSERVICE` = @idservice, `NOM` = @nom, `PRENOM`=@prenom , `TEL` = @tel, `MAIL` =@mail  where `IDPERSONNEL` = @idpersonnel; ";
             Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters.Add(" @idpersonnel", personnel.Idpersonnel);
+            parameters.Add("@idpersonnel", personnel.Idpersonnel);
             parameters.Add("@nom", personnel.Nom);
             parameters.Add("@prenom", personnel.Prenom);
             parameters.Add("@tel", personnel.Tel);
             parameters.Add("@mail", personnel.Mail);
-            
-
-            //switch (personnel.Nomservice)
-            //{
-            //    case "administratif":
-            //        ideservice = Service.Service1Administratif.Idservice;
-            //        break;
-
-            //    case "médiation culturelle":
-            //        ideservice = Service.Service2MediationCult.Idservice;
-            //        break;
-            //    case "pret":
-            //        ideservice = Service.Service3Pret.Idservice;
-            //        break;
-
-
-            //}
             parameters.Add("@idservice", ideservice);
             Singleton connection = Singleton.GetInstance(connectionString);
             connection.ReqUpdate(req, parameters);
@@ -402,9 +134,9 @@ namespace Mediatek86.Dal
         }
 
         /// <summary>
-        /// Supprime unpersonnel
+        /// Requete sql préparée type delete qui vaSupprime unpersonne
         /// </summary>
-        /// <param name="personnel"></param>
+        /// <param name="personnel">personnel</param>
         public static void SupprPersonnel(Personnel personnel)
         {
             string req = "delete from personnel where IDPERSONNEL = @idpersonnel;";
@@ -415,18 +147,24 @@ namespace Mediatek86.Dal
         }
 
 
+       
 
-        ///retourne l'objet motif pour l'ajouter à l'objet absence , à appliquer dans GetAbsense
+        /// <summary>
+        /// pas utilisé permet d'obtenir un objet motif
+        /// </summary>
+        /// <param name="reader">reader</param>
+        /// <param name="unmotifsabs"> objet motif</param>
+        /// <returns></returns>
         public static Motif GetMotifabs(MySqlDataReader reader, Motif unmotifsabs)
 
-        {   /// On instancie l'objet motifabsenpour pouvoir récupérer les valeurs des propriétés des Motiif Motif1Maladie pour éviter que motifabs soit une réferences
+        {   // On instancie l'objet motifabsenpour pouvoir récupérer les valeurs des propriétés des Motiif Motif1Maladie pour éviter que motifabs soit une réferences
            // unmotifsabs = new Motif(0, "libelle");
-            /////         -                                   Recupération de l'objet Motif associé à la requete            -
-            ///// Declarer un objet motifabs qui aura comme réference à la fin des instructions l'un des objet Motif déjà créer qui sont membres statiques ex Motif motiffamiliale
+          //         -                                   Recupération de l'objet Motif associé à la requete            -
+            // Declarer un objet motifabs qui aura comme réference à la fin des instructions l'un des objet Motif déjà créer qui sont membres statiques ex Motif motiffamiliale
 
-            /////Recuperer la valeur obtenue du champs "idmotif"
+            //Recuperer la valeur obtenue du champs "idmotif"
             int idmotifabs = (int)reader.GetValue(5);
-            /////L'objet nouvellement déclaré  motifabs fera une réference à l'un des objets membres statiques de la classes Motif selon la valeur obtenu dans le champs idmotif
+            //L'objet nouvellement déclaré  motifabs fera une réference à l'un des objets membres statiques de la classes Motif selon la valeur obtenu dans le champs idmotif
             switch (idmotifabs)
             {
                 case 1:
@@ -456,7 +194,10 @@ namespace Mediatek86.Dal
             return unmotifsabs;
 
         }
-
+        /// <summary>
+        /// Requete qui permet de récuper les absence d'une seul ^personnel
+        /// </summary>
+        /// <returns></returns>
         public static List<Absence> GetLesAbsences()
 
         {
@@ -472,9 +213,9 @@ namespace Mediatek86.Dal
             // Personnel personnel;
             int idunpersonnel = 0;
             while (reader.Read())
-            {     /// On récupere l'id personnel qu'on a obtenue dans la requete
+            {     // On récupere l'id personnel qu'on a obtenue dans la requete
                 idunpersonnel = (int)reader.GetValue(1);
-                ///On récupère l'objet motif associé à la requete
+                //On récupère l'objet motif associé à la requete
                 motifabs = AccesDonnes.GetMotifabs(reader, motifabs);
 
 
@@ -504,7 +245,7 @@ namespace Mediatek86.Dal
         /// <summary>
         /// Liste des absences pour un seul personnel qui est inséré en parametre de la fonction
         /// </summary>
-        /// <param name="unpersonnel"></param>
+        /// <param name="unpersonnel"> personnel dont on va gerer les absence</param>
         /// <returns> un liste d'infos sur sur 1 absence </returns>
         public static List<Absence> Liste1PersonlelAbsence(Personnel unpersonnel)
         {
@@ -542,10 +283,10 @@ namespace Mediatek86.Dal
 
         }
         /// <summary>
-        /// supprimer une babsence d'une personnel ds bddd
+        ///  supprimer une absence d'une personnel ds bddd
         /// </summary>
-        /// <param name="personnelgere"></param>
-        /// <param name="absencepersonnel"></param>
+        /// <param name="personnelgere"> personnel géré pour absence</param>
+        /// <param name="absence">une absence d'1 personnel</param>
         public static void InsertAbsence(Personnel personnelgere, Absence absence)
 
         {
@@ -567,8 +308,8 @@ namespace Mediatek86.Dal
         /// <summary>
         /// Mets à jour une absence d'un personnel dans la base de données
         /// </summary>
-        /// <param name="personnelgere"></param>
-        /// <param name="absence"></param>
+        /// <param name="personnelgere">personnelgere</param>
+        /// <param name="absence"> une absence d'1 personnel</param>
         public static void UpdateAbsence(Personnel personnelgere, Absence absence)
         {
             string req = "UPDATE `absence` SET `DATEDEBUT`=@datedebut,`IDMOTIF`= @idmotif,`DATEFIN`=@datefin WHERE  idAbsence =@idabsence ; ";
@@ -589,12 +330,12 @@ namespace Mediatek86.Dal
 
 
         }
-        
+
         /// <summary>
         /// Supprime une absence dans la base de données
         /// </summary>
-        /// <param name="personnelgere"></param>
-        /// <param name="absence"></param>
+        /// <param name="personnelgere">personnelgere</param>
+        /// <param name="absence">absence</param>
         public static void SupprAbsence (Personnel personnelgere , Absence absence)
         {
           string req = "DELETE FROM `absence` WHERE `idAbsence`=@idabsence ;";
@@ -603,14 +344,12 @@ namespace Mediatek86.Dal
             Singleton connection = Singleton.GetInstance(AccesDonnes.connectionString);
             connection.ReqUpdate(req, parameters);
         }
-
         /// <summary>
-        /// Boolean qui vérifié si le login et pwd saisie sont bien dans la bdd
+        ///  /// Boolean qui vérifié si le login et pwd saisie sont bien dans la bdd
         /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="prenom"></param>
-        /// <param name="pwd"></param>
-        /// <returns > True si le curseur trouve une ligne , False ssi pas de ligne</returns>
+        /// <param name="login"> login déja initialisé dans base de donnée</param>
+        /// <param name="pwd"> pwd déjà defini</param>
+        /// <returns></returns>
         public static Boolean ControleAuthentification(string login, string pwd)
         {
             string req = "select * from responsable  where  login = @logininput and pwd=SHA2 (@pwdinput, 256); ";
@@ -632,42 +371,7 @@ namespace Mediatek86.Dal
             }
         }
 
-        /*
-        List<Absence> lesAbsences = new List<Absence>();
-        Singleton curs = Singleton.GetInstance(AccesDonnes.connectionString);
-          string req = "SELECT absence.idAbsence, absence.IDPERSONNEL, personnel.NOM, personnel.PRENOM, absence.DATEDEBUT, absence.IDMOTIF, motif.LIBELLE, absence.DATEFIN FROM     absence INNER JOIN personnel ON absence.IDPERSONNEL = personnel.IDPERSONNEL INNER JOIN motif ON absence.IDMOTIF = motif.IDMOTIF; ";
-        ///string req = "SELECT absence.idAbsence,  absence.DATEDEBUT, absence.IDMOTIF, motif.LIBELLE, absence.DATEFIN FROM    absence INNER JOIN personnel ON absence.IDPERSONNEL = personnel.IDPERSONNEL INNER JOIN motif ON absence.IDMOTIF = motif.IDMOTIF; ";
-        curs.
-        curs.
-        while (curs.Read())
-        {
-           /// lesAbsences.Add
-           ///    (new Absence((int)curs.Field("idabsence"), Personnel , (DateTime)curs.Field("datebut"), (int)curs.Field("idmotif"),
-           //        (string)curs.Field("LIBELLE"), (DateTime)curs.Field("Datefin"))));
-
-            lesAbsences.Add(new Absence((int)curs.GetValue(0),/* Personnel */ //(int)curs.GetValue(1), (string)curs.GetValue(2), (string)curs.GetValue(3), (DateTime)curs.GetValue(4), (int)curs.GetValue(5), (string)curs.GetValue(6), (DateTime)curs.GetValue(7)));
-
-
-        /// lesAbsences.Add(  new Absence((int)curs.Field("idabsence"),/* Personnel */ (int)curs.Field("absence.IDPERSONNEL"),(string)curs.Field("personnel.nom"), (string)curs.Field("personnel.prenom"), (DateTime)curs.Field("datebut"), (int)curs.Field("idmotif"),
-        ///     (string)curs.Field("LIBELLE"), (DateTime)curs.Field("Datefin")));
-
-        //  }
-        ///curs.Close();
-        /*  curs.ReqSelect(req, null);
-          while (curs.Read())
-          {
-            // (DateTime)cmd.Parameters["@v_Hire_Date"].Value;
-              var cultureInfo = new CultureInfo("fr-FR");
-              string formatmysql = curs.GetString(2);
-              DateTime datetime = DateTime.Parse(, cultureInfo)
-              Absence absence= new Absence((int)curs.Field("idabsence"), (int)curs.Field("idpersonnel"), (string)curs.Field("nom"), (string)curs.Field("prenom"), (DateTime)curs.Field("datebut"), (int)curs.Field("idmotif"),
-             (string)curs.Field("libelle"), (DateTime)curs.Field("Datefin").Value);
-              lesAbsences.Add(absence);
-          }
-
-          curs.Close();
-         */
-
+       
 
 
 

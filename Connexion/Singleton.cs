@@ -7,13 +7,18 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Mediatek86.Model;
 using System.Globalization;
-    
 
 namespace Mediatek86.Connexion
-{     /// <summary>
-      /// Connexion à la base de données et exécution des requêtes
-      /// </summary>
-  public  class Singleton
+{ 
+
+
+
+
+
+    /// <summary>
+    /// Contient juste une classe Singleton qui va gérer l'accès à la base de données
+    /// </summary>
+public class Singleton
     {
         /// <summary>
         /// Unique instance de la classe
@@ -36,6 +41,7 @@ namespace Mediatek86.Connexion
         /// Constructeur privé pour créer la connexion à la BDD et l'ouvrir
         /// </summary>
         /// <param name="stringConnect">chaine de connexion</param>
+        /// <returns>instance unique de la classe</returns>
         private Singleton (string stringConnect)
         {
             try
@@ -65,32 +71,30 @@ namespace Mediatek86.Connexion
             return instance;
         }
 
-        /// methode pour absece
-      
 
 
 
 
-            /* public static void getdatagrid (string requetedata)
-             {
-                var connectiondtb = GetInstance("server=localhost;user id=root;database=mlr1") ;
-                 connectiondtb.connection.Open();
-                 MySqlDataAdapter reqdataAdapter = new MySqlDataAdapter(requetedata, connectiondtb);
 
 
-             }
-            */
+        /* public static void getdatagrid (string requetedata)
+         {
+            var connectiondtb = GetInstance("server=localhost;user id=root;database=mlr1") ;
+             connectiondtb.connection.Open();
+             MySqlDataAdapter reqdataAdapter = new MySqlDataAdapter(requetedata, connectiondtb);
 
-            /// <summary>
-            /// Methodes qui permet l'accès aux requetes
-            /// </summary>
 
-            /// <summary>
-            /// Exécution d'une requête autre que "select"
-            /// </summary>
-            /// <param name="stringQuery">requête autre que select</param>
-            /// <param name="parameters">dictionnire contenant les parametres</param>
-            public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters)
+         }
+        */
+
+
+        /// <summary>
+        /// Exécution d'une requête autre que "select"
+        /// </summary>
+        /// <param name="stringQuery">requête autre que select</param>
+        /// <param name="parameters">dictionnire contenant les parametres</param>
+        /// <returns> une requete préparé qui va s'exuter</returns>
+        public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters)
         {
             try
             {
@@ -110,11 +114,13 @@ namespace Mediatek86.Connexion
                 Console.WriteLine(e.Message);
             }
         }
+       
 
         /// <summary>
-        /// Exécute une requête type "select" et valorise le curseur
+        /// Faire une requete préparé select
         /// </summary>
-        /// <param name="stringQuery">requête select</param>
+        /// <param name="stringQuery">requete sql ds une chaine de caractère</param>
+        /// <param name="parameters">element du dictionnaire parameters qui sera l'objet à associé</param>
         public void ReqSelect(string stringQuery, Dictionary<string, object> parameters)
         {
             try
@@ -156,11 +162,11 @@ namespace Mediatek86.Connexion
             }
         }
 
-        /// <summary>
-        /// Retourne le contenu d'un champ dont le nom est passé en paramètre
-        /// </summary>
-        /// <param name="nameField">nom du champ</param>
-        /// <returns>valeur du champ</returns>
+      /// <summary>
+      /// Recuperer un champs de la bdd
+      /// </summary>
+      /// <param name="indicechamps"> le numéro de la colonne dans la requete</param>
+      /// <returns> obtenir la valeur d'un champs</returns>
         public object Field(/*string nameField*/int indicechamps)
         {
             if (reader is null)
@@ -177,10 +183,11 @@ namespace Mediatek86.Connexion
                 return null;
             }
         }
-
         /// <summary>
-        /// Fermeture du curseur
+        /// fermeture curseur
         /// </summary>
+        ///  <returns>false si fin de curseur atteinte</returns>
+
         public void Close()
         {
             if (!(reader is null))
